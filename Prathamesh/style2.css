@@ -46,3 +46,14 @@ body {
   background: #7a6dd6;
 }
 
+.foot {
+
+  background-color: black;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: green;
+  align-items: center;
+}
+
