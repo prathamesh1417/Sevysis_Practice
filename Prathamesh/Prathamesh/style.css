@@ -79,6 +79,18 @@ body {
   background: #7a6dd6;
 }
 
+.forget {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 300;
+  margin-top: 0px;
+}
+
+.forget a {
+  color: #6c5ce7;
+}
 @media (max-width: 430px) {
   .container {
     width: 300px;

@@ -1,10 +1,8 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: Arial, sans-serif;
@@ -12,7 +10,6 @@ body {
 }
 
 .container {
-
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -24,7 +21,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  background :black;
+  background: #2f4f4f;
   display: flex;
   justify-content: space-between;
   color: #fff;
@@ -35,32 +32,30 @@ header {
 h1 {
   font-size: 24px;
 }
-nav a{
+nav a {
   font-size: 23px;
   color: floralwhite;
   font-weight: 600;
   text-decoration: none;
   margin-left: 40px;
+  animation: slideInDown 0.5s ease-out;
+}
+nav a:hover {
+  color: rgb(54, 158, 227);
 }
 nav a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #fff;
 }
 
- header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .hero {
-  background-image: url('https://images.unsplash.com/photo-1580894732930-0babd100d356?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url("https://images.unsplash.com/photo-1580894732930-0babd100d356?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +81,7 @@ nav a::before {
 .hero-content p {
   font-size: 18px;
   color: lavenderblush;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   animation: slideInUp 1s ease-out;
 }
 
@@ -102,6 +97,17 @@ nav a::before {
 
 .btn:hover {
   background-color: #ff4d3b;
+}
+
+.last-text p {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: #f0f0f0;
+  background: #2f4f4f;
+  font-weight: 600;
+  font-size: 300;
+  margin-top: 0px;
 }
 
 /* Keyframe animations */
