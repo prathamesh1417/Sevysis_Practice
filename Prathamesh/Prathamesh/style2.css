@@ -24,7 +24,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 100px;
-  background: #333;
+  background :black;
   display: flex;
   justify-content: space-between;
   color: #fff;
@@ -37,7 +37,7 @@ h1 {
 }
 nav a{
   font-size: 23px;
-  color: #fff;
+  color: floralwhite;
   font-weight: 600;
   text-decoration: none;
   margin-left: 40px;
