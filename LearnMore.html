@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="fancy.ico" type="x-icon">
+    
+    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="lmstyle.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous">
+    <title>LearnMore</title>
+  
+        </head>
+        <body>
+          <header class="header">
+            <img class="logo1" src="S1.png"><a href="dashboard.html" class="logo">Sevysis Institute</a>
+            <nav class="nav">
+              <ul>
+                <a href="dashboard.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="LearnMore.html">LearnMore</a>
+                <div class="dropdown">
+                  <li class="navbar-text dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                      Admission
+                    </a>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item-text" href="https://forms.gle/GQJRHUN211zSSyE28">Enquiry Form</a>
+                      <a class="dropdown-item-text" href="#">Our
+                        Achievements</a>
+                      <a class="dropdown-item-text" href="#">Support</a>
+                    </div>
+                  </li>
+                </div>
+
+                <a href="login.html"><button class="navbar-btn btn btn-danger"
+                    onclick="logout()">Logout</button></a>
+              </ul>
+            </nav>
+          </header>
+          <section class="carousal">
+            <div id="carouselExampleCaptions" class="carousel slide"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0"
+                  class="active"></li>
+                <li data-target="#carouselExampleCaptions"
+                  data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions"
+                  data-slide-to="2"></li>
+              </ol>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="d-inline-flex w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3 class>Web Development</h3>
+                    <p>By the end of this course you’ll be able to describe the
+                      structure and functionality of the world wide web, create
+                      static web pages using HTML and CSS, select an appropriate
+                      web hosting service, and publish your webpages for the
+                      world to see. Finally, you’ll be able to develop a working
+                      model for creating your own personal or business websites
+                      in the future and launch yourself on a learning journey in
+                      web development.</p>
+                    <button type="button" class="btn btn-success"
+                      onclick="window.open('WD.html');">Syllabus</button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1661384118133-8f8b6eef9715?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="d-inline-flex w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>Data Analytics</h3>
+                    <p>This data analytics for beginners is designed to offer a
+                      solid foundation for working with various types of data,
+                      data visualization for decision making, and data analytics
+                      in different sectors. This program is ideal for anyone
+                      looking to become a data analyst or analytics manager.
+                      Learn data analytics and data science methodologies
+                      through this program and drive better business
+                      decisions.</p>
+                    <button type="button" class="btn btn-success"
+                      onclick="window.open('DataAnalytics.html');">Syllabus</button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://media.istockphoto.com/id/1297855960/photo/modern-interior-server-room-data-center-connection-and-cyber-network-in-dark-servers-backup.jpg?s=2048x2048&w=is&k=20&c=UO0YETWk2A6VTzIAUgd9z7U2DOijGUoDIlq1vN7AdS8="
+                    class="d-inline-flex w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>Data Science</h3>
+                    <p>Launch your career in data science. Gain foundational
+                      data science skills to prepare for a career or further
+                      advanced learning in data science.</p>
+                    <button type="button" class="btn btn-success"
+                      onclick="window.open('DataScience.html');">Syllabus</button>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button"
+                data-target="#carouselExampleCaptions" data-slide="prev">
+                <span class="carousel-control-prev-icon"
+                  aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button"
+                data-target="#carouselExampleCaptions" data-slide="next">
+                <span class="carousel-control-next-icon"
+                  aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </section>
+
+          <footer class="bg-dark text-white pt-5 pb-4">
+
+            <div class="container text-center text-md-left">
+
+              <div class="row text-center text-md-left">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+
+                  <h5
+                    class="text-uppercase mb-4 font-weight-bold text-warning">Sevysis</h5>
+
+                  <p>When Marvel's distributor allowed them more monthly
+                    releases, The Avengers was developed as a new comic
+                    book series.</p>
+
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+
+                  <h5
+                    class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">TheProviders</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">Creativity</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">SourceFiles</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">bootstrap 5 alpha</a>
+                  </p>
+
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+
+                  <h5
+                    class="text-uppercase mb-4 font-weight-bold text-warning">Useful
+                    links</h5>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">Your Account</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">Become an Affiliates</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">Shipping Rates</a>
+                  </p>
+
+                  <p>
+                    <a href="#" class="text-white"
+                      style="text-decoration: none;">Help</a>
+                  </p>
+
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+
+                  <h5
+                    class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+
+                  <p>
+                    <i class="fas fa-home mr-3"></i> India
+                  </p>
+
+                  <p>
+                    <i class="fas fa-envelope mr-3"></i> theproviders9@gmail.com
+                  </p>
+
+                  <p>
+                    <i class="fas fa-phone mr-3"></i> +91 3123659856
+                  </p>
+
+                  <p>
+                    <i class="fas fa-print mr-3"></i> +01 332 632 88
+                  </p>
+
+                </div>
+
+              </div>
+              <hr class="mb-4">
+
+              <div class="row align-items-center">
+
+                <div class="col-md-7 col-lg-8">
+
+                  <p>Copyright @2023 All rights reserved by:
+
+                    <a href="#" style="text-decoration: none;">
+                      <strong class="text-warning">The Providers</strong>
+                    </a>
+                  </p>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+
+                  <div class="text-center text-md-right">
+
+                    <ul class="list-unstyled list-inline">
+
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white"
+                          style="font-size: 23px;"><i
+                            class="fab fa-facebook"></i></a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white"
+                          style="font-size: 23px;"><i
+                            class="fab fa-twitter"></i></a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white"
+                          style="font-size: 23px;"><i
+                            class="fab fa-google-plus"></i></a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white"
+                          style="font-size: 23px;"><i
+                            class="fab fa-linkedin"></i></a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a href="#" class="btn-floating btn-sm text-white"
+                          style="font-size: 23px;"><i
+                            class="fab fa-youtube"></i></a>
+                      </li>
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </footer>
+
+          <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+    </body>
+  </html>

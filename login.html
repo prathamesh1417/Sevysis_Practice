@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="shortcut icon" href="fancy.ico" type="x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  />
+    <title>Login Page</title>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <form action="" class="login-username">
+        <p class="login-text" style="font-size: 2rem; font-weight: 700">
+          User Login
+        </p>
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Enter your email address"
+            id="email"
+          />
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Password" id="password" />
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i id="togglePassword" class="fa-solid fa-eye"></i>
+            </span>
+          </div>
+        </div>
+        <div class="form-group submit-btn">
+          <input type="submit" value="Submit" />
+        </div>
+        <div class="forget">
+          <p class="pass-for"><a href="forget.html">Forget Password?</a>.</p>
+        </div>
+        <div class="register">
+          <p class="reg">Don't have a Account?<a href="register.html">Register Here</a>.</p>
+        </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
