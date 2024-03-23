@@ -178,7 +178,7 @@ PAGES
 }
 
 .tags-widget a {
-  color: #ffffff !important;
+  color: #131212 !important;
   padding: 4px 10px;
   border-radius: 2px;
   font-size: 14px;
@@ -215,9 +215,9 @@ PAGES
 
 .pager li > a,
 .pager li > span {
-  background-color: #020202;
+  background-color: #030303;
   border: 1px solid #d6d8dc;
-  color: #fff;
+  color: #060606;
   float: none;
   line-height: 1.42857;
   letter-spacing: 2px;
