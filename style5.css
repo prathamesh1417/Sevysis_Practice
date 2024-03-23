@@ -52,7 +52,7 @@ header {
 nav {
   position: relative;
   display: inline;
-  margin-top: -5px;
+  margin-top: -10px;
   left: -7.3%;
   height: 200%;
   padding-top: 10px;
@@ -62,14 +62,14 @@ nav {
 
 .dropdown {
   position: relative;
-  top: -17.6%;
+  top: -17.8%;
   right: 39%;
   left: 48%;
   font-size: 20px;
   height: 100%;
 }
 .dropdown-menu {
-  width: 135%;
+  width: 127%;
   font-size: 400;
   background: white;
   border-radius: 8px;
