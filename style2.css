@@ -180,8 +180,6 @@ nav a:hover::before {
   background-color: #ff4d3b;
 }
 .section-all{
-  left: -10px;
-  position: relative;
   background-color: #fff;
 }
 .vision h1{
