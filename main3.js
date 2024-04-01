@@ -36,7 +36,7 @@ const processFormData = (event) => {
         displayError(passwordInput, "Password must start with an uppercase letter");
     }
     if (!passwordRegex.test(password)) {
-        displayError(passwordInput, "Create a valid Password");
+        displayError(passwordInput, "Invalid Password");
     }
 
     // Check for any errors before proceeding
