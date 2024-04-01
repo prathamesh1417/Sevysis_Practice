@@ -21,6 +21,7 @@ const processFormData = (event) => {
     const password = passwordInput.value.trim();
 
     const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const capitalLetterRegex = /^[A-Z]/;
     const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
     document.querySelectorAll(".input-group .error").forEach(field => field.classList.remove("error"));
@@ -28,6 +29,9 @@ const processFormData = (event) => {
 
     if (!emailRegex.test(email)) {
         displayError(emailInput, "Invalid Email");
+    }
+    if (!capitalLetterRegex.test(password)) {
+        displayError(passwordInput, "Password must start with an uppercase letter");
     }
     if (!passwordRegex.test(password)) {
         displayError(passwordInput, "Invalid Password");

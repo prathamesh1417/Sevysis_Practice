@@ -17,10 +17,11 @@ body {
 
 header {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 10px 90px;
+  padding: 5px 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -33,49 +34,48 @@ header {
 
 .logo {
   font-size: 32px;
-  margin-left: -144px;
+  margin-left: -145px;
   color: rgb(248, 249, 250); /* Preserves the text color */
   text-decoration: none;
   font-weight: 700;
-}
-.logo1 {
-  position: relative;
-  left: -90px;
-  width: 200px;
-  height: 90px;
 }
 
 .logo:hover {
   text-decoration: none;
   color: #fff;
 }
-nav {
+.logo1 {
   position: relative;
+  left: -90px;
+  width: 200px;
+  height: 75px;
+}
+
+nav {
   display: inline;
-  margin-top: -10px;
-  left: -7.3%;
-  height: 200%;
-  padding-top: 10px;
-  -webkit-animation: slideInDown 1s ease-out;
-  animation: slideInDown 1s ease-out;
+  width: 100%;
+  margin-left: -80px;
 }
 
 .dropdown {
   position: relative;
-  top: -17.8%;
+  top: -18%;
   right: 39%;
   left: 48%;
   font-size: 20px;
   height: 100%;
+  text-decoration: none;
 }
 .dropdown-menu {
   width: 127%;
+  height: 135%;
   font-size: 400;
-  background: white;
   border-radius: 8px;
+  color: #ff4d3b;
+  text-decoration: none;
 }
 .dropdown-menu a:hover {
-  color: rgb(20, 20, 20);
+  color: black;
 }
 .dropdown-menu a:hover::before {
   content: "";
@@ -89,19 +89,17 @@ nav {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-
 nav button {
   position: relative;
-  top: -128.4%;
-  left: 210%;
+  top: -128%;
+  left: 275%;
   font-size: 20px;
-  height: 32%;
+  height: 30%;
 }
 
 nav a {
   position: relative;
   font-size: 22px;
-
   color: #fff;
   font-weight: 500;
   text-decoration: none;

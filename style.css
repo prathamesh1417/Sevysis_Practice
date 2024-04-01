@@ -131,7 +131,7 @@ form select:focus {
 
 form input.error,
 form select.error {
-  border-color: #f91919;
+  border-color: #ff0000;
   background: #f9f0f1;
 }
 
@@ -139,7 +139,7 @@ form small {
   font-size: 14px;
   margin-top: 5px;
   display: block;
-  color: #f91919;
+  color: #ff0000;
 }
 
 .forget {
