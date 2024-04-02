@@ -40,9 +40,10 @@ header {
 }
 
 nav {
+  position: relative;
   display: inline;
   width: 100%;
-  margin-left: 169px;
+  left: 7rem;
  margin-top: -58px;
 }
 
@@ -158,8 +159,8 @@ nav a:hover::before {
 
 .hero-content p {
   font-size: 20px;
-  font-weight: 500;
-  color: rgb(218, 255, 6);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
   margin-bottom: 9px;
   -webkit-animation: slideInUp 1s ease-out;
   animation: slideInUp 1s ease-out;
