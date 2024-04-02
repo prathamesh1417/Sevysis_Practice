@@ -17,7 +17,7 @@ body {
 header {
   position: relative;
   width: 100%;
-  padding: 5px 80px;
+  padding: 1px 85px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,31 +29,22 @@ header {
   align-items: center;
   z-index: 100;
   text-decoration: none;
+  
 }
 
-.logo {
-  font-size: 32px;
-  margin-left: -145px;
-  color: rgb(255, 255, 255); /* Preserves the text color */
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.logo:hover {
-  text-decoration: none;
-  color: #ffffff;
-}
 .logo1 {
   position: relative;
-  left: -90px;
-  width: 200px;
-  height: 75px;
+  width: 220px;
+  height: 120px;
+  left: -80px;
 }
 
 nav {
+  position: relative;
   display: inline;
   width: 100%;
-  margin-left: -80px;
+  left: 7rem;
+ margin-top: -58px;
 }
 
 .dropdown {
@@ -91,7 +82,7 @@ nav {
 nav button {
   position: relative;
   top: -128%;
-  left: 286%;
+  left: 257%;
   font-size: 20px;
   height: 30%;
 }
@@ -99,14 +90,14 @@ nav button {
 nav a {
   position: relative;
   font-size: 22px;
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
   text-decoration: none;
   margin-left: 40px;
 }
 nav a:hover {
   text-decoration: none;
-  color: #09d2ff;
+  color: #1087FF;
 }
 
 nav a:hover::before {
