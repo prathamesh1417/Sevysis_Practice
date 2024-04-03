@@ -55,7 +55,7 @@ passToggleBtn.addEventListener('click', () => {
 form.addEventListener("submit", processFormData);
 
 // Redirect if already logged in
-window.addEventListener('load', () => {
+window.addEventListener ('load', () => {
     if (sessionStorage.getItem('isLoggedIn')) {
         window.location.href = 'dashboard.html'; // Redirect to the dashboard page
     }
