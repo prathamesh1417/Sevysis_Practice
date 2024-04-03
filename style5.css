@@ -30,7 +30,7 @@ header {
   align-items: center;
   z-index: 100;
   text-decoration: none;
-  
+  overflow: hidden;
 }
 
 .logo1 {
@@ -45,7 +45,7 @@ nav {
   display: inline;
   width: 100%;
   left: 7rem;
- margin-top: -58px;
+ margin-top: -67px;
 }
 
 .dropdown {
@@ -82,7 +82,7 @@ nav {
 }
 nav button {
   position: relative;
-  top: -128%;
+  top: -123%;
   left: 230%;
   font-size: 20px;
   height: 30%;
@@ -112,6 +112,10 @@ nav a:hover::before {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+}
+ nav, .hero, .section-all {
+  max-width: 100%;
+  overflow: hidden; 
 }
 .carousal {
   display: -webkit-box;

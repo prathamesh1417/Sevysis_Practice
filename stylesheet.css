@@ -9,7 +9,7 @@
 }
 
 body {
-  display: none;
+  
 background-size: contain;
   background-image: url("https://wallpaperaccess.com/full/643353.png");
 }
@@ -30,7 +30,6 @@ header {
   z-index: 100;
   text-decoration: none;
   overflow: hidden;
-  
 }
 
 .logo1 {
@@ -50,25 +49,20 @@ nav {
 
 .dropdown {
   position: relative;
-  top: -16.5%;
+  top: -18%;
   right: 39%;
   left: 48%;
   font-size: 20px;
   height: 100%;
   text-decoration: none;
-  
 }
 .dropdown-menu {
-  position: relative;
   width: 127%;
-  padding-top:200px;
   height: 135%;
   font-size: 400;
   border-radius: 8px;
   color: #ff4d3b;
   text-decoration: none;
-  max-height: 100% ;
-  
 }
 .dropdown-menu a:hover {
   color: black;
@@ -88,7 +82,7 @@ nav {
 nav button {
   position: relative;
   top: -121%;
-  left: 274%;
+  left: 257%;
   font-size: 20px;
   height: 30%;
 }
@@ -105,7 +99,10 @@ nav a:hover {
   text-decoration: none;
   color: #1087FF;
 }
-
+ nav, .hero, .section-all {
+  max-width: 100%; /* Added to constrain the width */
+  overflow: hidden; /* Added to hide any overflowing content */
+}
 nav a:hover::before {
   content: "";
   position: absolute;
@@ -119,10 +116,6 @@ nav a:hover::before {
   transition: 0.2s;
 }
 
- .logo1, .hero, .section-all {
-  max-width: 100%;
-  overflow: hidden; 
-}
 .hero {
   height: 400px;
   margin-top: -1rem;
@@ -622,9 +615,25 @@ nav a:hover::before {
   margin-left: 80px;
 }
 
+.test .card:hover {
+  -webkit-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px);
+  -webkit-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  text-shadow: 2px 2px 8px #6e5b94;
+}
 
-
-
+.test .card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  -webkit-transform: rotateX(-15deg) rotateY(10deg);
+  transform: rotateX(-15deg) rotateY(10deg);
+  -webkit-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
 .test .stars {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -653,7 +662,7 @@ nav a:hover::before {
 
 .test .btn {
   position: absolute;
-  top: 220px;
+  top: 208px;
   margin: 0 20px;
   width: 120px;
   height: 32px;
@@ -688,6 +697,8 @@ nav a:hover::before {
   height: 5px;
   width: 100%;
 }
+
+
 
 .test .content {
   position: absolute;
@@ -827,7 +838,7 @@ nav a:hover::before {
 .indicator {
   text-align: center;
   padding: 20px;
-  background-color: #0180ff; /* Bright orange background */
+  background-color: #ffa500; /* Bright orange background */
   color: white; /* White text */
 }
 
@@ -846,7 +857,7 @@ nav a:hover::before {
 .indicator1 {
   text-align: center;
   padding: 20px;
-  background-color: #0180ff; /* Bright orange background */
+  background-color: #ffa500; /* Bright orange background */
   color: white; /* White text */
 }
 

@@ -27,7 +27,20 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-
+.go1 button {
+ display: flex;
+ padding-top: 5px;
+ padding-left: 13px;
+ background-color: #7e76eb;
+ position: absolute;
+ color: #fff;
+ width: 8%;
+  top: 3%;
+left: 90%;
+border-radius: 6px;
+  font-size: 20px;
+  height: 7%;
+}
 .container {
   width: 400px;
   min-height: 400px;

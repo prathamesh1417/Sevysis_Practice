@@ -60,3 +60,7 @@ window.addEventListener('load', () => {
         window.location.href = 'dashboard.html'; // Redirect to the dashboard page
     }
 });
+
+document.getElementById('Goback').addEventListener('click', function() {
+    window.location.href = 'user.html'; // Replace 'login.html' with the actual login page URL
+});
