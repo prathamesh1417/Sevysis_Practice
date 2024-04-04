@@ -9,42 +9,75 @@
 }
 
 body {
-  
-background-size: contain;
-  background-image: url("https://wallpaperaccess.com/full/643353.png");
+  overflow-x:hidden ;
 }
+.carousal {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: -88px;
+  /* Shadow effect */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.carousal h4 {
+  position: absolute;
+  bottom: 450px;
+  color: #fbfbfb;
+  font-size: 40px;
+  font-weight: 600;
+  opacity: 0; /* Start with h4 text hidden */
+  animation: fadeIn 1.5s ease-in forwards; /* Apply the animation */
+}
+
 
 header {
   position: relative;
   width: 100%;
-  padding: 1px 85px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(1, 1, 1);
+  height: 85px;
+  padding: 2px 85px;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   z-index: 100;
-  text-decoration: none;
-  overflow: hidden;
+  text-decoration: none; 
+}
+
+@keyframes slideInFromLeft {
+  from {
+    left: -100%; /* Start off-screen to the left */
+  }
+  to {
+    left: -80px; /* End at the original position */
+  }
 }
 
 .logo1 {
   position: relative;
-  width: 220px;
-  height: 120px;
+  width: 195px;
+  height: 95px;
+  top: -8px;
   left: -80px;
+  animation: slideInFromLeft 0.8s ease-out forwards; /*Apply the animation */
 }
+
 
 nav {
   position: relative;
   display: inline;
-  width: 100%;
+  width: auto; /* Adjusted to auto to prevent overflow */
   left: 7rem;
- margin-top: -68px;
+  margin-top: -68px;
+ 
 }
 
 .dropdown {
@@ -55,14 +88,17 @@ nav {
   font-size: 20px;
   height: 100%;
   text-decoration: none;
+  
 }
 .dropdown-menu {
-  width: 127%;
-  height: 135%;
-  font-size: 400;
+  position: relative;
+  width: 130%; /* Adjusted to auto to prevent overflow */
+  height: 100%; /* Adjusted to auto to prevent overflow */
+  font-size: 16px;
   border-radius: 8px;
   color: #ff4d3b;
   text-decoration: none;
+  
 }
 .dropdown-menu a:hover {
   color: black;
@@ -75,13 +111,11 @@ nav {
   height: 3px;
   width: 100%;
   background-color: #ffffff;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
 }
 nav button {
   position: relative;
-  top: -121%;
+  top: -126%;
   left: 257%;
   font-size: 20px;
   height: 30%;
@@ -97,12 +131,9 @@ nav a {
 }
 nav a:hover {
   text-decoration: none;
-  color: #1087FF;
+  color: #1087ff;
 }
- nav, .hero, .section-all {
-  max-width: 100%; /* Added to constrain the width */
-  overflow: hidden; /* Added to hide any overflowing content */
-}
+
 nav a:hover::before {
   content: "";
   position: absolute;
@@ -116,9 +147,10 @@ nav a:hover::before {
   transition: 0.2s;
 }
 
+
 .hero {
-  height: 400px;
-  margin-top: -1rem;
+  height: 500px;
+  margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,16 +209,16 @@ nav a:hover::before {
 .section-all {
   background-color: #fff;
 }
-.chat-header a{
-  text-decoration:none;
+.chat-header a {
+  text-decoration: none;
   color: white;
 }
-.copyright{
-  font-size:12px;
+.copyright {
+  font-size: 12px;
   text-align: center;
 }
 .copyright a {
-  text-decoration:none;
+  text-decoration: none;
   color: #343c41;
 }
 #chatbot-toggle-btn {
@@ -195,7 +227,7 @@ nav a:hover::before {
   right: 20px;
   padding: 12px 15px;
   border: none;
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   border-radius: 30px;
   font-size: 16px;
@@ -206,7 +238,7 @@ nav a:hover::before {
   z-index: 1001; /* Ensure the button is above the chatbot popup */
 }
 #chatbot-toggle-btn:hover {
-  background-color: #0074CC;
+  background-color: #0074cc;
 }
 .chatbot-popup {
   display: none;
@@ -216,13 +248,13 @@ nav a:hover::before {
   background-color: #fff;
   border-radius: 15px;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 350px;
   max-width: 90%;
   z-index: 1000;
 }
 .chat-header {
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   padding: 15px 20px;
   border-top-left-radius: 15px;
@@ -231,11 +263,11 @@ nav a:hover::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 #close-btn {
   background-color: transparent;
@@ -254,16 +286,16 @@ nav a:hover::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px 20px;
   border-top: 1px solid #ddd;
 }
 #user-input {
   font-family: "Poppins";
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -273,7 +305,7 @@ nav a:hover::before {
   font-family: "Poppins", sans-serif;
   padding: 10px 20px;
   border: none;
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   border-radius: 12px;
   margin-left: 10px;
@@ -283,7 +315,7 @@ nav a:hover::before {
   transition: background-color 0.3s ease;
 }
 #send-btn:hover {
-  background-color: #0074CC;
+  background-color: #0074cc;
 }
 .user-message {
   background-color: #f3f3f3;
@@ -298,12 +330,12 @@ nav a:hover::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse; /* Move user message to the right */
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; /* Move user message to the right */
 }
 .user-message::before {
   content: "\1F468"; /* Man emoji */
@@ -312,7 +344,7 @@ nav a:hover::before {
   right: -20px;
   margin-bottom: 7px;
   font-size: 20px;
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   border-radius: 50%;
   width: 30px;
@@ -321,35 +353,35 @@ nav a:hover::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .bot-message {
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   padding: 14px;
   border-radius: 15px;
   margin-bottom: 10px;
   margin-top: 15px;
   -ms-flex-item-align: start;
-      align-self: flex-start; /* Move bot message to the left */
+  align-self: flex-start; /* Move bot message to the left */
   margin-right: 10px; /* Push bot message to the right */
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; /* Adjust for button placement */
+  -ms-flex-direction: column;
+  flex-direction: column; /* Adjust for button placement */
 }
 .bot-message::before {
   content: "\1F916"; /* Robot emoji */
@@ -358,7 +390,7 @@ nav a:hover::before {
   left: -14px;
   margin-bottom: 4px;
   font-size: 20px;
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   border-radius: 50%;
   width: 30px;
@@ -367,26 +399,26 @@ nav a:hover::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin-top: 10px;
 }
 .button-container button {
   padding: 10px 50px;
   border: none;
-  background-color: #1087FF;
+  background-color: #1087ff;
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
@@ -395,7 +427,7 @@ nav a:hover::before {
   transition: background-color 0.3s ease;
 }
 .button-container button:hover {
-  background-color: #0074CC;
+  background-color: #0074cc;
 }
 
 .about {
@@ -404,9 +436,13 @@ nav a:hover::before {
   text-align: center;
   padding-top: 100px;
 }
-.about-img {
-  padding-left: 40px;
+.about button{
+  position: relative;
+  bottom: 50px;
+  padding: 15px;
+  border-radius: 8px;
 }
+
 .about-img img {
   height: 100%;
   width: 80%;
@@ -556,7 +592,6 @@ nav a:hover::before {
   position: relative;
   display: block;
   margin-top: 30px;
- 
 }
 .test p {
   color: #0c0c0c;
@@ -615,25 +650,6 @@ nav a:hover::before {
   margin-left: 80px;
 }
 
-.test .card:hover {
-  -webkit-transform: translateY(-20px);
-  -ms-transform: translateY(-20px);
-  transform: translateY(-20px);
-  -webkit-transition: 0.4s ease-out;
-  -o-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
-  text-shadow: 2px 2px 8px #6e5b94;
-}
-
-.test .card:hover ~ .card {
-  position: relative;
-  left: 50px;
-  -webkit-transform: rotateX(-15deg) rotateY(10deg);
-  transform: rotateX(-15deg) rotateY(10deg);
-  -webkit-transition: 0.4s ease-out;
-  -o-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
-}
 .test .stars {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -662,7 +678,7 @@ nav a:hover::before {
 
 .test .btn {
   position: absolute;
-  top: 208px;
+  top: 220px;
   margin: 0 20px;
   width: 120px;
   height: 32px;
@@ -697,8 +713,6 @@ nav a:hover::before {
   height: 5px;
   width: 100%;
 }
-
-
 
 .test .content {
   position: absolute;

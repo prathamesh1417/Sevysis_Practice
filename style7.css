@@ -9,43 +9,53 @@
 }
 
 body {
- display: none;
+ 
   background-size: contain;
   overflow-x: hidden;
   background-image: url("https://images.unsplash.com/photo-1572025442348-511bdcae389b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 
+
+
+
 header {
   position: relative;
   width: 100%;
-  padding: 1px 85px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(1, 1, 1);
+  height: 85px;
+  padding: 2px 85px;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   z-index: 100;
-  text-decoration: none;
-  overflow: hidden;
+  text-decoration: none; 
+}
+
+@keyframes slideInFromLeft {
+  from {
+    left: -100%; /* Start off-screen to the left */
+  }
+  to {
+    left: -80px; /* End at the original position */
+  }
 }
 
 .logo1 {
   position: relative;
-  width: 220px;
-  height: 120px;
+  width: 195px;
+  height: 95px;
+  top: -8px;
   left: -80px;
+  animation: slideInFromLeft 0.8s ease-out forwards; /*Apply the animation */
 }
 
 nav {
   position: relative;
   display: inline;
-  width: 100%;
+  width: auto; /* Adjusted to auto to prevent overflow */
   left: 7rem;
- margin-top: -67px;
+  margin-top: -68px;
+ 
 }
 
 .dropdown {
@@ -56,14 +66,17 @@ nav {
   font-size: 20px;
   height: 100%;
   text-decoration: none;
+  
 }
 .dropdown-menu {
-  width: 127%;
-  height: 135%;
-  font-size: 400;
+  position: relative;
+  width: 130%; /* Adjusted to auto to prevent overflow */
+  height: 100%; /* Adjusted to auto to prevent overflow */
+  font-size: 16px;
   border-radius: 8px;
   color: #ff4d3b;
   text-decoration: none;
+  
 }
 .dropdown-menu a:hover {
   color: black;
@@ -76,13 +89,11 @@ nav {
   height: 3px;
   width: 100%;
   background-color: #ffffff;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
   transition: 0.2s;
 }
 nav button {
   position: relative;
-  top: -121%;
+  top: -127%;
   left: 240%;
   font-size: 20px;
   height: 30%;
@@ -98,7 +109,7 @@ nav a {
 }
 nav a:hover {
   text-decoration: none;
-  color: #1087FF;
+  color: #1087ff;
 }
 
 nav a:hover::before {
@@ -114,15 +125,12 @@ nav a:hover::before {
   transition: 0.2s;
 }
 
- nav, .hero, .section-all {
-  max-width: 100%;
-  overflow: hidden; 
-}
 /******************************************
 PAGES
 ******************************************/
 
 .page-title h3 {
+  padding-top: 100px;
   font-size: 35px;
   font-weight: 500;
   color: #fcffff;
