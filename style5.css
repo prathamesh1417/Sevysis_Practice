@@ -38,46 +38,41 @@ header {
   text-decoration: none; 
 }
 
-@-webkit-keyframes slideInFromLeft {
-  from {
-    left: -100%; /* Start off-screen to the left */
-  }
-  to {
-    left: -80px; /* End at the original position */
-  }
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideInFromLeft {
-  from {
-    left: -100%; /* Start off-screen to the left */
-  }
-  to {
-    left: -80px; /* End at the original position */
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .logo1 {
   position: relative;
-  width: 195px;
-  height: 95px;
-  top: -8px;
-  left: -80px;
-  -webkit-animation: slideInFromLeft 0.8s ease-out forwards;
-          animation: slideInFromLeft 0.8s ease-out forwards; /*Apply the animation */
+  width: 220px;
+  height: 112px;
+  right: 80px;
+  bottom: 12px;
+  /* Removed negative top and left values */
+  opacity: 0; /* Start with logo hidden */
+  animation: fadeIn 1.9s ease-in forwards;
 }
+
+
 
 nav {
   position: relative;
   display: inline;
   width: auto; /* Adjusted to auto to prevent overflow */
   left: 7rem;
-  margin-top: -68px;
+  bottom: 85px;
  
 }
 
 .dropdown {
   position: relative;
-  top: -18%;
+  bottom: 18%;
   right: 39%;
   left: 48%;
   font-size: 20px;
@@ -112,7 +107,7 @@ nav {
 }
 nav button {
   position: relative;
-  top: -127%;
+  bottom: 126%;
   left: 230%;
   font-size: 20px;
   height: 30%;

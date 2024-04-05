@@ -16,14 +16,10 @@
 }
 
 body {
- 
   background-size: contain;
   overflow-x: hidden;
   background-image: url("https://images.unsplash.com/photo-1572025442348-511bdcae389b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
-
-
-
 
 header {
   position: relative;
@@ -44,46 +40,41 @@ header {
   text-decoration: none; 
 }
 
-@-webkit-keyframes slideInFromLeft {
-  from {
-    left: -100%; /* Start off-screen to the left */
-  }
-  to {
-    left: -80px; /* End at the original position */
-  }
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideInFromLeft {
-  from {
-    left: -100%; /* Start off-screen to the left */
-  }
-  to {
-    left: -80px; /* End at the original position */
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .logo1 {
   position: relative;
-  width: 195px;
-  height: 95px;
-  top: -8px;
-  left: -80px;
-  -webkit-animation: slideInFromLeft 0.8s ease-out forwards;
-          animation: slideInFromLeft 0.8s ease-out forwards; /*Apply the animation */
+  width: 220px;
+  height: 112px;
+  right: 80px;
+  bottom: 12px;
+  /* Removed negative top and left values */
+  opacity: 0; /* Start with logo hidden */
+  animation: fadeIn 1.9s ease-in forwards;
 }
+
+
 
 nav {
   position: relative;
   display: inline;
   width: auto; /* Adjusted to auto to prevent overflow */
   left: 7rem;
-  margin-top: -68px;
+  bottom: 85px;
  
 }
 
 .dropdown {
   position: relative;
-  top: -18%;
+  bottom: 18%;
   right: 39%;
   left: 48%;
   font-size: 20px;
@@ -118,7 +109,7 @@ nav {
 }
 nav button {
   position: relative;
-  top: -127%;
+  bottom: 126%;
   left: 240%;
   font-size: 20px;
   height: 30%;
@@ -149,7 +140,6 @@ nav a:hover::before {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-
 /******************************************
 PAGES
 ******************************************/
@@ -468,9 +458,11 @@ CONTACT
 }
 
 #map {
-  height: 350px;
+  height: 430px;
   position: relative;
-  width: 100%;
+  left: 10%;
+  width: 80%;
+  border-radius: 8px;
   z-index: 1;
 }
 
@@ -480,7 +472,7 @@ CONTACT
   border: 1px solid #eee;
 }
 
-#map img {
+#map {
   max-width: inherit;
 }
 
