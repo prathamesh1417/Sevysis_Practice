@@ -22,21 +22,17 @@ body {
 }
 
 header {
-  position: relative;
-  width: 100%;
+  position: fixed; /* Changed from relative to fixed */
+  top: 0; /* Align the navbar to the top */
+  left: 0; /* Align the navbar to the left */
+  width: 100%; /* Ensure it spans the full width */
   background-color: rgb(1, 1, 1);
   height: 85px;
   padding: 2px 85px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Increase z-index to ensure it's above other elements */
   text-decoration: none; 
 }
 
