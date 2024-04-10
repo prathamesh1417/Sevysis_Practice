@@ -68,31 +68,22 @@ function sendEmail() {
             Password: "F5F3E1ACEB858FED658D2FBBF82892D76D36",
             To: 'prathamesh.184054@gmail.com',
             From: "prathamesh.184054@gmail.com",
+            ReplyTo: email.value, // The client's email address
             Subject: subject.value,
             Body: bodyMessage
-        }).then(
-            message => {
-                if (message == "OK") {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Enquiry sent Successfully!",
-                        icon: "success"
-                      });
-                }
-            }
-        );
+        })
     }
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    sendEmail();
-
-    form.reset();
-    return false;
-});
-
-
+    };
+    
+    
+    // Add event listener to the form
+    document.getElementById('enquiryForm').addEventListener("submit", (e) => {
+        e.preventDefault();
+        sendEmail();
+    
+        // Reset the form after submission
+        document.getElementById('enquiryForm').reset();
+    });
 
 
 function displayContent() {
