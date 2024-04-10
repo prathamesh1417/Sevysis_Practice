@@ -70,7 +70,7 @@ nav {
 
 .dropdown {
   position: relative;
-  bottom: 18%;
+  bottom: 25%;
   right: 39%;
   left: 48%;
   font-size: 20px;
@@ -79,14 +79,13 @@ nav {
   
 }
 .dropdown-menu {
-  position: relative;
-  width: 130%; /* Adjusted to auto to prevent overflow */
-  height: 100%; /* Adjusted to auto to prevent overflow */
+  position: fixed;
+  width: 160%; /* Adjusted to auto to prevent overflow */
+  height: 250%; /* Adjusted to auto to prevent overflow */
   font-size: 16px;
   border-radius: 8px;
   color: #ff4d3b;
   text-decoration: none;
-  
 }
 .dropdown-menu a:hover {
   color: black;
