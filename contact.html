@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
       rel='stylesheet'>
-    <title>Contact</title>
+    <title>Find Us</title>
   
   </head>
 
@@ -28,37 +28,67 @@
           
             <a href="dashboard.html">Home</a>
            
-            <a href="contact.html">Contact</a>
+            <a href="contact.html">Find</a>
             <a href="LearnMore.html">LearnMore</a>
-          <div class="dropdown">
-            <li class="navbar-text dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Products
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-              <a class="dropdown-item-text"
-              href="https://forms.gle/GQJRHUN211zSSyE28">Enquiry Form</a>
-            <a class="dropdown-item-text" href="#">Latest Projects</a>
-            <a class="dropdown-item-text" href="#">Achievements</a>
-              </div>
-            </li>
+            <a href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a>
+            <!-- Modal -->
+    
+           
+            <div class="dropdown">
+              <li class="navbar-text dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Products
+                </a>
+                <div class="dropdown-menu p-8 " aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item-text" href="enquiry.html">Enquiry Form</a>
+                  <a class="dropdown-item-text" href="#">Latest Projects</a>
+                  <a class="dropdown-item-text" href="#">Achievements</a>
+    
+                </div>
+              </li>
+            </div>
+    
+    
+            <!-- <button class="navbar-btn btn btn-danger" onclick="logout()">Logout</button> -->
+    
+          </ul>
+        </nav>
+      </header>
+      <div class="modal fade" id="enquiryModal" tabindex="-1" role="dialog" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Enquiry Form -->
+              <form action="#">
+                <div class="form-group">
+                  <label for="Name">Your Name</label>
+                  <input type="Name" class="form-control" id="name" placeholder="Enter your Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Your email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="Subject">Your Subject</label>
+                  <input type="subject" class="form-control" id="subject" placeholder="Enter your Subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Your message</label>
+                  <textarea class="form-control" id="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
           </div>
-<button class="navbar-btn btn btn-danger" onclick="logout()">Logout</button>
-        </ul>
-      </nav>
-    </header>
-
+        </div>
+      </div>
     <section class="section db p120">
         <div class="container ">
             <div class="row">
@@ -120,14 +150,7 @@
                             
                         </div><!-- end title -->
                         
-                        <form class="big-contact-form" role="search">
-                            <input type="text" class="form-control" placeholder="Enter your name..">
-                            <input type="email" class="form-control" placeholder="Enter email..">
-                            <input type="text" class="form-control" placeholder="Your phone..">
-                            <input type="text" class="form-control" placeholder="Subject..">
-                            <textarea class="form-control" placeholder="Message goes here.."></textarea>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+               
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end container -->

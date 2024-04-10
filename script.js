@@ -1,52 +1,114 @@
-class SessionManager {
-    constructor() {
-        this.init();
+// Function to display the content without session checks
+const form = document.querySelector('form');
+const fullname = document.getElementById('name');
+const email = document.getElementById('email');
+const subject = document.getElementById('subject');
+const msg = document.getElementById('message');
+
+const displayError = (inputField, errorMessage) => {
+    // Check if an error message is already displayed
+    let errorElement = inputField.parentElement.querySelector('.error-text');
+    if (!errorElement) {
+        // If there is no error message, create a new one
+        errorElement = document.createElement("div");
+        errorElement.classList.add("error-text");
+        inputField.parentElement.appendChild(errorElement);
     }
+    // Update the error message
+    errorElement.textContent = errorMessage;
+    errorElement.style.color = "red";
+    inputField.style.borderColor = "red";
+};
 
-    async init() {
-        // Check if the user is logged in
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-        const isPasswordReset = sessionStorage.getItem('isPasswordReset');
+// Function to clear errors
+const clearErrors = () => {
+    document.querySelectorAll('.error-text').forEach(errorText => {
+        errorText.textContent = '';
+    });
+    const inputFields = [fullname, email, subject, msg];
+    inputFields.forEach(field => field.style.borderColor = "");
+};
 
-        // If not logged in or password was reset, redirect to the login page without displaying any content
-        if (!isLoggedIn || isPasswordReset) {
-            sessionStorage.removeItem('isPasswordReset');
-            window.location.href = 'login.html';
-        } else {
-            // If logged in and password was not reset, display the content and update the URL state
-            document.body.style.display = 'block';
-            history.pushState(null, null, window.location.href);
-        }
+
+// Email validation regex
+const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+function sendEmail() {
+    clearErrors(); // Clear all previous errors
+
+    // Validate fields
+    let valid = true;
+    if (!fullname.value.trim()) {
+        displayError(fullname, "Name is required.");
+        valid = false;
     }
-
-    logout() {
-        // Remove the logged-in status and redirect to the login page
-        sessionStorage.removeItem('isLoggedIn');
-        window.location.href = 'login.html';
+    if (!email.value.trim()) {
+        displayError(email, "Email is required.");
+        valid = false;
+    } else if (!emailRegex.test(email.value.trim())) {
+        displayError(email, "Please enter a valid email address.");
+        valid = false;
     }
-
-    handlePopState() {
-        // Check if the user is logged in when navigating with the browser's back and forward buttons
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-
-        // If not logged in, redirect to the login page
-        if (!isLoggedIn) {
-            window.location.href = 'login.html';
-        } else {
-            // If logged in, maintain the current state
-            history.pushState(null, null, window.location.href);
-        }
+    if (!subject.value.trim()) {
+        displayError(subject, "Subject is required.");
+        valid = false;
+    }
+    if (!msg.value.trim()) {
+        displayError(msg, "Message is required.");
+        valid = false;
+    }
+    // If all fields are valid, send the email
+    if (valid) {
+        const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}
+        <br> Subject: ${subject.value} <br> Message: ${msg.value}`;
+        
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "prathamesh.184054@gmail.com",
+            Password: "F5F3E1ACEB858FED658D2FBBF82892D76D36",
+            To: 'prathamesh.184054@gmail.com',
+            From: "prathamesh.184054@gmail.com",
+            Subject: subject.value,
+            Body: bodyMessage
+        }).then(
+            message => {
+                if (message == "OK") {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Enquiry sent Successfully!",
+                        icon: "success"
+                      });
+                }
+            }
+        );
     }
 }
 
-// Instantiate the SessionManager
-const sessionManager = new SessionManager();
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendEmail();
+
+    form.reset();
+    return false;
+});
+
+
+
+
+function displayContent() {
+    document.body.style.display = 'block';
+}
+
+// Function to handle logout without session management
+function logout() {
+    window.location.href = 'login.html';
+}
 
 // Expose the logout function to the global window object
-window.logout = sessionManager.logout.bind(sessionManager);
+window.logout = logout;
 
-// Handle browser back and forward navigation
-window.onpopstate = sessionManager.handlePopState.bind(sessionManager);
+// Call displayContent on page load to show the content
+displayContent();
 
 const responses = {
     "hello": "Hi there! How can I assist you today?",
@@ -132,5 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCounter();
     });
   });
+  
+
   
   

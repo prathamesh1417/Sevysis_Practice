@@ -37,10 +37,9 @@ const processFormData = (event) => {
         displayError(passwordInput, "Invalid Password");
     }
 
+    // If there are no errors, redirect to the dashboard
     const errorInputs = document.querySelectorAll(".input-group .error");
     if (errorInputs.length === 0) {
-        sessionStorage.setItem('isLoggedIn', true);
-        sessionStorage.setItem('isPasswordReset', false);
         window.location.href = 'dashboard.html'; // Redirect to the dashboard page
     }
 };
@@ -53,13 +52,6 @@ passToggleBtn.addEventListener('click', () => {
 });
 
 form.addEventListener("submit", processFormData);
-
-// Redirect if already logged in
-window.addEventListener ('load', () => {
-    if (sessionStorage.getItem('isLoggedIn')) {
-        window.location.href = 'dashboard.html'; // Redirect to the dashboard page
-    }
-});
 
 document.getElementById('Goback').addEventListener('click', function() {
     window.location.href = 'user.html'; // Replace 'login.html' with the actual login page URL

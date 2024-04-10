@@ -103,7 +103,7 @@ border-radius: 6px;
   border-color: #a29bfe;
 }
 
-.submit-btn input {
+.submit-btn button {
   display: block;
   width: 100%;
   height: auto;
