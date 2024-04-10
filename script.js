@@ -62,6 +62,7 @@ function sendEmail() {
         const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}
         <br> Subject: ${subject.value} <br> Message: ${msg.value}`;
         
+        
         Email.send({
             Host: "smtp.elasticemail.com",
             Username: "prathamesh.184054@gmail.com",
