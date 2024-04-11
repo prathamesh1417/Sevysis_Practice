@@ -77,7 +77,7 @@ function sendEmail() {
                 pass: 'F5F3E1ACEB858FED658D2FBBF82892D76D36'
               },
             DMARC: true,
-            To: 'sarajadhav1417@gmail.com',
+            To: 'prathamesh.184054@gmail.com',
             From: "prathamesh.184054@gmail.com",
             Port: 2525 ,
             secure: true,
