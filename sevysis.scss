@@ -2,18 +2,22 @@
 
 * {
   font-family: "Poppins", sans-serif;
-  margin: 0;
+  margin-bottom: 0;
+  bottom: 0;
   padding: 0;
+  
+  // Ensures padding and border are included in the element's total width and height
 }
 
- body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Prevent horizontal overflow */
-}
+body
 
+.slider__wrapper,
+.slider__content,
+.slider__image,
+footer {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 header {
   position: fixed;
   top: 0;
@@ -27,9 +31,15 @@ header {
   align-items: center;
   z-index: 1000;
   text-decoration: none;
-  margin-bottom: 20px; /* Add space below the header */
+ 
+  
 }
-
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+ 
+}
 @-webkit-keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -73,8 +83,8 @@ nav {
 }
 .dropdown-menu {
   position: fixed;
-  width: 160%; /* Adjusted to auto to prevent overflow */
-  height: 250%; /* Adjusted to auto to prevent overflow */
+  width: 160%; // Adjusted from 160% to auto
+  height: 250%; // Adjusted from 250% to auto
   font-size: 16px;
   border-radius: 8px;
   color: #ff4d3b;
@@ -133,19 +143,21 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
 
 
 .slider__wrapper {
-  margin: 0 auto;
-  .slick-track {
-    overflow: hidden;
-  }
+  overflow: hidden;
+background-position: center;
+background-size: cover;
+ 
 
 }
 .slider__content {
   display: flex !important;
+  padding: 10px;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  font-weight: 600;
   position: relative;
-  color: #1087ff;
+  color: #000000;
  
 
 
@@ -153,22 +165,27 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
   .slider__text {
    
     transition: all 1s ease;
-    background: rgba(rgb(65, 63, 63), .75);
-    padding: 1.5em 0em;
+    background: transparent;
+    padding: 7em 3em;
     position: absolute;
-    top: 80px;
+    top: 70px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 19px;
     font-weight: 550;
-    left: 1px;
-    width: 40%;
+    left: 5px;
+    width: 90%;
+    height: 82%;
     z-index: 1;
-    opacity: 0;
+   
     transition: all 1s linear;
     span {
       font-weight: 600;
-      font-size: 1em;
+      font-size: 2em;
       background: $bg-gradient;
-      border-radius: 50%;
-      line-height: 35px;
+      border-radius: 90%;
+     
+     
       width: 35px;
       display: block;
       text-align: center;
@@ -177,7 +194,8 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
     }
     h3 {
       font-weight: 600;
-      font-size: 2em;
+      background-color: #fff;
+      font-size: 3em;
       display: inline-block;
       margin-bottom: 0;
       &:after {
@@ -189,35 +207,40 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
       }
     }
     p {
-      font-size: 15.3px;
+      font-size: 18px;
+      font-weight: 600;
       line-height: 1.5;
       color: #fff;
+      background-color: rgba(255, 255, 255, 0.3); // Semi-transparent background
+      backdrop-filter: blur(10px); // Adjust the pixel value to control the blur intensity
     }
+    
 
   }
 
   .slider__image {
-    width: 80%;
-    margin: 30px;
+    width: 100%;
+    height: 100vh; // Make sure the container spans the full viewport height
     position: relative;
+    margin: 0; // Remove margin to fill the entire viewport
+    overflow: hidden; // Hide any overflow
+  
     &:before {
       content: "";
-      padding-bottom: 54.25%;
       display: block;
+      padding-top: 56.25%; // Maintain aspect ratio (16:9 in this case)
     }
+  
     img {
       position: absolute;
-      padding-top: 4em;
-      border-radius: 20px;
-      
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 92%;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Cover the entire container without stretching
+      border-radius: 0; // Optional: remove if you want sharp corners
       transition: all .75s ease;
     }
   }
+  
 }
 
 
@@ -230,7 +253,7 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
   right: 2em;
   z-index: 2;
   background: $bg-gradient;
-  background-size: 100%;
+ 
   border: 0;
   width: 45px;
   height: 40px;
@@ -239,9 +262,7 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
   cursor: pointer;
   transition: all .5s ease;
 
-  &:hover {
-    background-size: 190%;
-  }
+  
 
   &.slick-prev {
     right: 5em;
@@ -264,4 +285,10 @@ $bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 5
   .slider__image img {
     width: 100%;
   }
+}
+
+footer {
+  width: 100%;
+  padding: 20px 0; // Adjust padding as necessary
+  margin-top: auto; // This helps to push the footer to the bottom if using flexbox on the parent container
 }

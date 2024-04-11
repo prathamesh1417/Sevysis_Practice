@@ -29,7 +29,7 @@
             <a href="dashboard.html">Home</a>
            
             <a href="contact.html">Find Us</a>
-            <a href="LearnMore.html">LearnMore</a>
+            <a href="LearnMore.html">Learn More</a>
             <a href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a>
             <!-- Modal -->
     
@@ -68,20 +68,24 @@
               <!-- Enquiry Form -->
               <form id="enquiryForm">
                 <div class="form-group">
-                  <label for="Name">Your Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter your Name" autocomplete="off" required>
+                  <label for="Name">Full Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off" >
                 </div>
                 <div class="form-group">
-                  <label for="Email">Your Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email" autocomplete="off" required>
+                  <label for="Email">Email Id</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email id" autocomplete="off" >
                 </div>
                 <div class="form-group">
-                  <label for="Subject">Your Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Enter your Subject" autocomplete="off" required>
+                  <label for="Number">Phone No.</label>
+                  <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="Subject">Subject</label>
+                  <input type="text" class="form-control"  id="subject" placeholder="Enter Subject" autocomplete="off">
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
-                  <textarea class="form-control" id="message" placeholder="Enter your message" required></textarea>
+                  <textarea class="form-control" id="message" placeholder="Enter a message" ></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
@@ -113,13 +117,18 @@
       
               // Prepare the data for the API call
               var formData = new FormData();
-              formData.append('from', 'prathamesh.184054@gmail.com');
-              formData.append('fromName', 'Sevysis');
-              formData.append('apikey', '3141C5F77BB7910BB8764CF17584CFDD686A96758BE1E715B7070BFA58BE37250400A2D066906E9E677425C2AB472316'); // Replace with your actual API key
-              formData.append('subject', subject);
-              formData.append('to', email);
-              formData.append('bodyHtml', htmlContent); // Use the loaded HTML content for the email body
-              formData.append('isTransactional', true);
+          formData.append('from', 'prathamesh.184054@gmail.com');    
+          formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); // Use a verified sender email address
+          formData.append('fromName', 'Sevysis');
+          formData.append('apikey', 'BF1415C80C636241E82E18E6941793A8C49FEC6DE7EDE711ADEBD6578981347C6084724E25DCC4647A3EB06C9BA7FB82'); // Replace with your actual API key
+          formData.append('subject', subject);
+          formData.append('to', email);
+          formData.append('Authentication', true);
+          formData.append('bodyHtml', htmlContent); // Use the loaded HTML content for the email body
+          formData.append('isTransactional', true); // Set to true for 
+          formData.append('secure', true);
+          formData.append('spam', false);
+          
         
               // Send the data to the ElasticEmail API
               return fetch('https://api.elasticemail.com/v2/email/send', {
@@ -134,7 +143,12 @@
                   title: "Success!",
                   text: "Enquiry and appreciation email sent successfully!",
                   icon: "success"
-                });
+                }).then((result) => {
+          if (result.value) {
+            window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+          }
+        });
+      
               } else {
                 Swal.fire({
                   title: "Error!",
@@ -228,19 +242,19 @@
             </h5>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Our Products</a>
+              <a href="index.html" class="text-white" style="text-decoration: none">Education Management</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Live Demo project</a>
+              <a href="#" class="text-white" style="text-decoration: none">Hospital & Pathlab Solution</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">SourceFiles</a>
+              <a href="#" class="text-white" style="text-decoration: none">Design & Development</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Connect Us</a>
+              <a href="contact.html" class="text-white" style="text-decoration: none">Connect Us</a>
             </p>
           </div>
 
@@ -262,20 +276,48 @@
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Terms & Conditions</a>
+              <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#termModal">Terms & Conditions</a>
             </p>
           </div>
 
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-dark" id="termModalLabel">Terms & Conditions</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Enquiry Form -->
+                  <form id="enquiryForm">
+                    <div class="form-group">
+                      <label class="Name text-dark font-weight-bold">Terms:-</label>
+                      <p class="text-dark">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maiores et mollitia doloribus saepe aspernatur nihil beatae a veritatis debitis maxime ab quasi hic molestiae cupiditate in, fugiat ducimus facilis</p>
+                    
+                    </div>
+                    <div class="form-group">
+                      <label class="Name text-dark font-weight-bold">Conditions:-</label>
+                      <p class="text-dark">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maiores et mollitia doloribus saepe aspernatur nihil beatae a veritatis debitis maxime ab quasi hic molestiae cupiditate in, fugiat ducimus facilis</p>
+                    
+                    </div>
+                    
+                  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-lg-2 col-xl-3 mx-auto mt-3 ">
             <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
               Contact
             </h5>
 
-            <p><i class="fas fa-home mr-3"></i>Kharadi,
-
-              Pune-Nagar highway
-
-              Pune-411014 MH</p>
+            <p class="text-left"><i class="fas fa-home mr-2 "></i>Kharadi,
+              Pune-Nagar highway<p class="text-left pl-4">Pune-411014 MH</p>
+              </p>
 
             <p><i class="fas fa-envelope mr-3"></i>
               ankushb@sevysis.in</p>
@@ -292,7 +334,7 @@
             <div class="text-center">
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                  <a href="https://www.facebook.com/profile.php?id=61558176181227&mibextid=ZbWKwL" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
                       class="fab fa-facebook-f"></i></a>
                 </li>
                 <li class="list-inline-item">
@@ -300,15 +342,15 @@
                       class="fab fa-twitter"></i></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
-                      class="fab fa-google-plus"></i></a>
+                  <a href="https://www.instagram.com/sevysis?utm_source=qr&igsh=MXBwZWhwMmEyejZxZg==" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                      class="fab fa-instagram"></i></a>
                 </li>
                 <li class="list-inline-item">
                   <a href="https://www.linkedin.com/company/sevysis/" class="btn-floating btn-sm text-white"
                     style="font-size: 23px"><i class="fab fa-linkedin"></i></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                  <a href="https://www.youtube.com/@Sevysis" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
                       class="fab fa-youtube"></i></a>
                 </li>
               </ul>
