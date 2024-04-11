@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="fancy.ico" type="x-icon">
   <link rel="stylesheet" href="style2.css">
+ 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -41,7 +42,7 @@
             </a>
             <div class="dropdown-menu p-8 " aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item-text" href="index.html">Education Management</a>
-              <a class="dropdown-item-text" href="#">Hospital & Pathlab Solution</a>
+              <a class="dropdown-item-text" href="index1.html">Hospital & Pathlab Solution</a>
               <a class="dropdown-item-text" href="#">Design & Development</a>
 
             </div>
@@ -67,20 +68,24 @@
           <!-- Enquiry Form -->
           <form id="enquiryForm">
             <div class="form-group">
-              <label for="Name">Your Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your Name" autocomplete="off" required>
+              <label for="Name">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off" >
             </div>
             <div class="form-group">
-              <label for="Email">Your Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" autocomplete="off" required>
+              <label for="Email">Email Id</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email id" autocomplete="off" >
             </div>
             <div class="form-group">
-              <label for="Subject">Your Subject</label>
-              <input type="text" class="form-control" id="subject" placeholder="Enter your Subject" autocomplete="off" required>
+              <label for="Number">Phone No.</label>
+              <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="Subject">Subject</label>
+              <input type="text" class="form-control"  id="subject" placeholder="Enter Subject" autocomplete="off">
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea class="form-control" id="message" placeholder="Enter your message" required></textarea>
+              <textarea class="form-control" id="message" placeholder="Enter a message" ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -93,34 +98,39 @@
 
 
   <script>
-    // JavaScript code to handle form submission and send email using ElasticEmail API
+    
     document.getElementById('enquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
     
-      // Collect form data
+      
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
       var subject = document.getElementById('subject').value;
       var message = document.getElementById('message').value;
   
-      // Load the HTML template
+    
       fetch('demo.html')
         .then(response => response.text())
         .then(template => {
-          // Replace placeholders with actual data
+          
           var htmlContent = template.replace('{{name}}', name).replace('{{subject}}', subject);
   
-          // Prepare the data for the API call
+        
           var formData = new FormData();
-          formData.append('from', 'prathamesh.184054@gmail.com');
-          formData.append('fromName', 'Sevysis');
-          formData.append('apikey', '3141C5F77BB7910BB8764CF17584CFDD686A96758BE1E715B7070BFA58BE37250400A2D066906E9E677425C2AB472316'); // Replace with your actual API key
-          formData.append('subject', subject);
-          formData.append('to', email);
-          formData.append('bodyHtml', htmlContent); // Use the loaded HTML content for the email body
-          formData.append('isTransactional', true);
+      formData.append('from', 'prathamesh.184054@gmail.com');    
+      formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); 
+      formData.append('fromName', 'Sevysis');
+      formData.append('apikey', 'BF1415C80C636241E82E18E6941793A8C49FEC6DE7EDE711ADEBD6578981347C6084724E25DCC4647A3EB06C9BA7FB82'); // Replace with your actual API key
+      formData.append('subject', subject);
+      formData.append('to', email);
+      formData.append('Authentication', true);
+      formData.append('bodyHtml', htmlContent); 
+      formData.append('isTransactional', true); 
+      formData.append('secure', true);
+      formData.append('spam', false);
+      
     
-          // Send the data to the ElasticEmail API
+         
           return fetch('https://api.elasticemail.com/v2/email/send', {
             method: 'POST',
             body: formData
@@ -133,7 +143,12 @@
               title: "Success!",
               text: "Enquiry and appreciation email sent successfully!",
               icon: "success"
-            });
+            }).then((result) => {
+      if (result.value) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  
           } else {
             Swal.fire({
               title: "Error!",
@@ -201,16 +216,16 @@
   <button id="chatbot-toggle-btn">Chat with us!</button>
   <div class="chatbot-popup" id="chatbot-popup">
     <div class="chat-header">
-      <span>Chatbot | <a href="mailto:prathameshcparmar@gmail.com" target="_blank">Sevysis Support</a></span>
-      <button id="close-btn">&times;</button>
+      <span ><a class="text-decoration-none" href="mailto:ankushb@sevysis.in" target="_blank">Sevysis Support</a></span>
+      <button id="close-btn"></button>
     </div>
     <div class="chat-box" id="chat-box"></div>
     <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Type a message...">
+      <input type="text" id="user-input" placeholder="Type a message..." autocomplete="off">
       <button id="send-btn">Send</button>
     </div>
     <div class="copyright">
-      <a href target="_blank">Build By Prathamesh © 2024</a>
+      <a class="text-decoration-none" href target="_blank">Build By Sevysis © 2024</a>
     </div>
   </div>
 
@@ -260,13 +275,13 @@
                 <div class="table">
                   <br>
                   <h4 class="card-caption">
-                    <h2>Vision</h2>
+                    <h2 class="font-weight-bold">Vision</h2>
                   </h4>
                   <p class="card-description"> To create simple, easy and innovative services for our nation from the
                     common man’s perspective in digital
                     world to make our life easy.</p>
 
-                  <a class="action text-decoration-none" href="#">
+                  <a class="action text-decoration-none " href="#">
                     Find out more
                     <span aria-hidden="true">
                       →
@@ -286,7 +301,7 @@
 
                   <h4 class="card-caption">
                     <br>
-                    <h2>Mission</h2>
+                    <h2 class="font-weight-bold">Mission</h2>
                   </h4>
 
 
@@ -312,7 +327,7 @@
                   <br>
                   <h4 class="card-caption">
 
-                    <h2>Goals</h2>
+                    <h2 class="font-weight-bold">Goals</h2>
                   </h4>
                   <p class="card-description"> Our goals are to nurture a passion for lifelong
                     learning,technological innovation,and foster a community
@@ -343,37 +358,43 @@
           <div class="image"></div>
           <div>
             <div class="stars">
-              <h6>Works for XYZ company </h6>
+              <h6>Sarjan Construction Pvt. Ltd.<br>
+                Ahmedabad,GJ</h6>
             </div>
 
           </div>
         </div>
 
         <p class="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Deserunt
-          voluptatem alias ut provident sapiente repellendus.
+          "I had a great experience working with Sevysis on the implementation of Resource management
+ Software. We are very happy to buy this software also my working become fast and they
+ provide complete training and post support for using this application
+ “Very simple, easy to use and fabulous software” "
         </p>
-        <p class="name">-John Doe</p>
+        <p class="name">-Mr. Utsav Gaudani</p>
       </div>
 
       <div class="card">
         <div class="header">
           <div class="image1"></div>
+          
           <div>
             <div class="stars">
-              <h6>Works for XYZ company </h6>
+              <h6>Kidszone English Medium School<br>
+                Akola,MH</h6>
             </div>
 
           </div>
         </div>
 
         <p class="message">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Deserunt
-          voluptatem alias ut provident sapiente repellendus.
+         "Sevysis is our Trusted solution partner. We choose Sevysis for their simple outstanding
+          account, Admin & Enquiry management solution services. Our collaboration with Sevysis has
+          evolved in the lifetime Partnership.
+          I would recommend it to anyone looking for good and custom software."
+         
         </p>
-        <p class="name">-Amy Norway</p>
+        <p class="name">-Mr. Yogesh Gawande</p>
       </div>
 
       <div class="card">
@@ -451,19 +472,19 @@
             </h5>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Our Products</a>
+              <a href="index.html" class="text-white" style="text-decoration: none">Education Management</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Live Demo project</a>
+              <a href="#" class="text-white" style="text-decoration: none">Hospital & Pathlab Solution</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">SourceFiles</a>
+              <a href="#" class="text-white" style="text-decoration: none">Design & Development</a>
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Connect Us</a>
+              <a href="contact.html" class="text-white" style="text-decoration: none">Connect Us</a>
             </p>
           </div>
 
@@ -485,20 +506,48 @@
             </p>
 
             <p>
-              <a href="#" class="text-white" style="text-decoration: none">Terms & Conditions</a>
+              <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#termModal">Terms & Conditions</a>
             </p>
           </div>
 
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-dark" id="termModalLabel">Terms & Conditions</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Enquiry Form -->
+                  <form id="enquiryForm">
+                    <div class="form-group">
+                      <label class="Name text-dark font-weight-bold">Terms:-</label>
+                      <p class="text-dark">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maiores et mollitia doloribus saepe aspernatur nihil beatae a veritatis debitis maxime ab quasi hic molestiae cupiditate in, fugiat ducimus facilis</p>
+                    
+                    </div>
+                    <div class="form-group">
+                      <label class="Name text-dark font-weight-bold">Conditions:-</label>
+                      <p class="text-dark">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maiores et mollitia doloribus saepe aspernatur nihil beatae a veritatis debitis maxime ab quasi hic molestiae cupiditate in, fugiat ducimus facilis</p>
+                    
+                    </div>
+                    
+                  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-lg-2 col-xl-3 mx-auto mt-3 ">
             <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
               Contact
             </h5>
 
-            <p><i class="fas fa-home mr-3"></i>Kharadi,
-
-              Pune-Nagar highway
-
-              Pune-411014 MH</p>
+            <p class="text-left"><i class="fas fa-home mr-2 "></i>Kharadi,
+              Pune-Nagar highway<p class="text-left pl-4">Pune-411014 MH</p>
+              </p>
 
             <p><i class="fas fa-envelope mr-3"></i>
               ankushb@sevysis.in</p>
@@ -515,7 +564,7 @@
             <div class="text-center">
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                  <a href="https://www.facebook.com/profile.php?id=61558176181227&mibextid=ZbWKwL" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
                       class="fab fa-facebook-f"></i></a>
                 </li>
                 <li class="list-inline-item">
@@ -523,15 +572,15 @@
                       class="fab fa-twitter"></i></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
-                      class="fab fa-google-plus"></i></a>
+                  <a href="https://www.instagram.com/sevysis?utm_source=qr&igsh=MXBwZWhwMmEyejZxZg==" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                      class="fab fa-instagram"></i></a>
                 </li>
                 <li class="list-inline-item">
                   <a href="https://www.linkedin.com/company/sevysis/" class="btn-floating btn-sm text-white"
                     style="font-size: 23px"><i class="fab fa-linkedin"></i></a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                  <a href="https://www.youtube.com/@Sevysis" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
                       class="fab fa-youtube"></i></a>
                 </li>
               </ul>

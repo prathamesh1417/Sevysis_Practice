@@ -4,23 +4,23 @@ const fullname = document.getElementById('name');
 const email = document.getElementById('email');
 const subject = document.getElementById('subject');
 const msg = document.getElementById('message');
-
+const number = document.getElementById('number');
 const displayError = (inputField, errorMessage) => {
-    // Check if an error message is already displayed
+
     let errorElement = inputField.parentElement.querySelector('.error-text');
     if (!errorElement) {
-        // If there is no error message, create a new one
+     
         errorElement = document.createElement("div");
         errorElement.classList.add("error-text");
         inputField.parentElement.appendChild(errorElement);
     }
-    // Update the error message
+  
     errorElement.textContent = errorMessage;
     errorElement.style.color = "red";
     inputField.style.borderColor = "red";
 };
 
-// Function to clear errors
+
 const clearErrors = () => {
     document.querySelectorAll('.error-text').forEach(errorText => {
         errorText.textContent = '';
@@ -30,13 +30,13 @@ const clearErrors = () => {
 };
 
 
-// Email validation regex
+
 const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 function sendEmail() {
-    clearErrors(); // Clear all previous errors
+    clearErrors(); 
 
-    // Validate fields
+
     let valid = true;
     if (!fullname.value.trim()) {
         displayError(fullname, "Name is required.");
@@ -49,6 +49,10 @@ function sendEmail() {
         displayError(email, "Please enter a valid email address.");
         valid = false;
     }
+    if (!number.value.trim()) {
+        displayError(number, "Phone Number is required.");
+        valid = false;
+    }
     if (!subject.value.trim()) {
         displayError(subject, "Subject is required.");
         valid = false;
@@ -57,18 +61,29 @@ function sendEmail() {
         displayError(msg, "Message is required.");
         valid = false;
     }
-    // If all fields are valid, send the email
+   
     if (valid) {
-        const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}
+        const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}<br> Number: ${number.value}
         <br> Subject: ${subject.value} <br> Message: ${msg.value}`;
         
+        
+       
         Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "prathamesh.184054@gmail.com",
+            SecureToken : "4b985981-407c-4986-b5f6-735991b38e12",
             Password: "F5F3E1ACEB858FED658D2FBBF82892D76D36",
-            To: 'prathamesh.184054@gmail.com',
+            Authentication: true,
+            auth: {
+                user: 'prathamesh.184054@gmail.com',
+                pass: 'F5F3E1ACEB858FED658D2FBBF82892D76D36'
+              },
+            DMARC: true,
+            To: 'sarajadhav1417@gmail.com',
             From: "prathamesh.184054@gmail.com",
-            ReplyTo: email.value, // The client's email address
+            Port: 2525 ,
+            secure: true,
+            isTransactional: true,
+            spam:false,
+            ReplyTo: email.value, 
             Subject: subject.value,
             Body: bodyMessage
         })
@@ -76,12 +91,12 @@ function sendEmail() {
     };
     
     
-    // Add event listener to the form
+  
     document.getElementById('enquiryForm').addEventListener("submit", (e) => {
         e.preventDefault();
         sendEmail();
     
-        // Reset the form after submission
+      
         document.getElementById('enquiryForm').reset();
     });
 
@@ -90,15 +105,15 @@ function displayContent() {
     document.body.style.display = 'block';
 }
 
-// Function to handle logout without session management
+
 function logout() {
     window.location.href = 'login.html';
 }
 
-// Expose the logout function to the global window object
+
 window.logout = logout;
 
-// Call displayContent on page load to show the content
+
 displayContent();
 
 const responses = {
@@ -163,8 +178,7 @@ function appendMessage(sender, message) {
     }
 }
 
-// JavaScript to animate the counting
-// JavaScript to animate the counting with infinite loop and slow animation
+
 document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.indicator-value');
     counters.forEach(counter => {
@@ -172,14 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = +counter.getAttribute('data-target');
         let c = +counter.innerText;
   
-        const increment = target / 20000; // Slower increment value
+        const increment = target / 20000; 
   
         if(c < target) {
             counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout(updateCounter, 50); // Slower animation speed
+            setTimeout(updateCounter, 50); 
         } else {
-            counter.innerText = '0'; // Reset after reaching the target
-            setTimeout(updateCounter, 50); // Continue the loop
+            counter.innerText = '0'; 
+            setTimeout(updateCounter, 50); 
         }
       };
       updateCounter();
@@ -187,5 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
-  
-  
+ 
