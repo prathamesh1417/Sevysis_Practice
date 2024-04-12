@@ -66,7 +66,7 @@ nav {
   position: relative;
   display: inline;
   width: auto; /* Adjusted to auto to prevent overflow */
-  left: 7rem;
+  left: 5rem;
   bottom: 85px;
 }
 
@@ -82,16 +82,15 @@ nav {
 
 .dropdown-menu {
   position: fixed;
-  width: 160%;
-  height: 250%;
-  font-size: 16px;
-  border-radius: 8px;
+  width: 197%; /* Adjusted to auto to prevent overflow */
+  height: 190%; /* Adjusted to auto to prevent overflow */
+  border-radius: 10px;
   color: #ff4d3b;
   text-decoration: none;
 }
 
 .dropdown-menu a:hover {
-  color: black;
+  color: rgb(16, 63, 253);
 }
 
 .dropdown-menu a:hover::before {
