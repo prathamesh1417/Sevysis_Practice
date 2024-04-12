@@ -166,12 +166,12 @@ background-size: cover;
    
     transition: all 1s ease;
     background: transparent;
-    padding: 7em 3em;
+    padding: 6em 2em;
     position: absolute;
     top: 70px;
     align-items: center;
     justify-content: center;
-    padding-left: 19px;
+    padding-left: 150px;
     font-weight: 550;
     left: 5px;
     width: 90%;
@@ -189,28 +189,34 @@ background-size: cover;
       width: 35px;
       display: block;
       text-align: center;
-      color: rgb(2, 2, 2);
+      color: rgb(255, 255, 255);
 
     }
-    h3 {
+    h2 {
       font-weight: 600;
-      background-color: #fff;
-      font-size: 3em;
-      display: inline-block;
+      font-size: 38px;
+      color: #fff;
+      display: block; // Changed from inline-block to block
+      text-align: center; // Added to center the text
       margin-bottom: 0;
+    
       &:after {
         content: "";
-        width: 100%;
-        height: 3px;
+        width:70%;
+        height: 6px;
         display: block;
+        margin-left: auto; // Added to center the content
+        margin-right: auto; // Added to center the content
         background: $bg-gradient;
       }
+      
     }
+    
     p {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 600;
       line-height: 1.5;
-      color: #fff;
+      color: #000000;
       background-color: rgba(255, 255, 255, 0.3); // Semi-transparent background
       backdrop-filter: blur(10px); // Adjust the pixel value to control the blur intensity
     }
@@ -218,28 +224,39 @@ background-size: cover;
 
   }
 
-  .slider__image {
-    width: 100%;
-    height: 100vh; // Make sure the container spans the full viewport height
-    position: relative;
-    margin: 0; // Remove margin to fill the entire viewport
-    overflow: hidden; // Hide any overflow
-  
-    &:before {
-      content: "";
-      display: block;
-      padding-top: 56.25%; // Maintain aspect ratio (16:9 in this case)
-    }
-  
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // Cover the entire container without stretching
-      border-radius: 0; // Optional: remove if you want sharp corners
-      transition: all .75s ease;
-    }
+  // Define a mixin for the blur effect
+@mixin blur-background($blur-amount) {
+  filter: blur($blur-amount);
+  -webkit-filter: blur($blur-amount); // For Safari 6.0 to 9.0
+}
+
+// Your existing .slider__image class
+.slider__image {
+  width: 100%;
+  height: 100vh; // Make sure the container spans the full viewport height
+  position: relative;
+  margin: 0; // Remove margin to fill the entire viewport
+  overflow: hidden; // Hide any overflow
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // Maintain aspect ratio (16:9 in this case)
   }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Cover the entire container without stretching
+    border-radius: 0; // Optional: remove if you want sharp corners
+    transition: all .75s ease;
+
+    // Add the blur effect to the image
+    @include blur-background(4px);
+  }
+}
+
   
 }
 

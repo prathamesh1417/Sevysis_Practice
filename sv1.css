@@ -1,0 +1,256 @@
+@import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    
+    background-size: contain;
+    background-image: url(https://images.unsplash.com/photo-1571624436279-b272aff752b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  overflow-x: hidden;
+}
+.bullet {
+ position: relative;
+ display: block;
+ margin-top: 10%;
+    /* Shadow effect */
+  }
+  .bullet p{
+    font-weight: 700;
+    font-size: 17px;
+    color:rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.3); 
+      backdrop-filter: blur(10px);
+  }
+  .bullet h1 {  
+    font-size: 35px;
+   font-weight: 600;
+   color: rgb(255, 255, 255);
+  }
+  .bullet h2 {  
+   font-weight: 600;
+   color: rgb(255, 255, 255);
+   background-color: rgba(0, 128, 255, 0.3); 
+      backdrop-filter: blur(60px)
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .carousal h4 {
+    position: absolute;
+    bottom: 450px;
+    color: #fbfbfb;
+    font-size: 40px;
+    font-weight: 600;
+    opacity: 0; /* Start with h4 text hidden */
+    -webkit-animation: fadeIn 1.5s ease-in forwards;
+    animation: fadeIn 1.5s ease-in forwards; /* Apply the animation */
+  }
+  
+  header {
+    position: fixed; /* Changed from relative to fixed */
+    top: 0; /* Align the navbar to the top */
+    left: 0; /* Align the navbar to the left */
+    width: 100%; /* Ensure it spans the full width */
+    background-color: rgb(1, 1, 1);
+    height: 85px;
+    padding: 2px 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Increase z-index to ensure it's above other elements */
+    text-decoration: none;
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .logo1 {
+    position: relative;
+    width: 200px;
+    height: 102px;
+    right: 80px;
+    bottom: 8px;
+    /* Removed negative top and left values */
+    opacity: 0; /* Start with logo hidden */
+    animation: fadeIn 1.9s ease-in forwards;
+  }
+  
+  nav {
+    position: relative;
+    display: inline;
+    width: auto; /* Adjusted to auto to prevent overflow */
+    left: 7rem;
+    bottom: 75px;
+  }
+  
+  .dropdown {
+    position: fixed;
+    bottom: 25%;
+    right: 39%;
+    left: 48%;
+    font-size: 20px;
+    height: 100%;
+    text-decoration: none;
+  }
+  .dropdown-menu {
+    position: fixed;
+    width: 195.5%; /* Adjusted to auto to prevent overflow */
+    height: 192%; /* Adjusted to auto to prevent overflow */
+    border-radius: 10px;
+  
+    color: #ff4d3b;
+    text-decoration: none;
+  }
+  .dropdown-menu a:hover {
+    color: rgb(16, 63, 253);
+  }
+  .dropdown-menu a:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+  }
+  nav button {
+    position: fixed;
+    top: 20px;
+    left: 90%;
+    font-size: 20px;
+    height: 45px;
+  }
+  
+  nav a {
+    position: relative;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+  }
+  nav a:hover {
+    text-decoration: none;
+    color: #1087ff;
+  }
+  
+  nav a:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #f50d0d;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+  }
+  /* Adjust the modal backdrop opacity */
+  .modal-backdrop.show {
+    opacity: 0.5; /* You can change this value to make it lighter */
+  }
+  
+  /* Ensure the modal is on top of other content */
+  .modal {
+    z-index: 1050; /* Standard z-index for Bootstrap modals */
+  }
+  
+  
+  .form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+  }
+  
+  .form .title {
+    color: royalblue;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form input {
+    outline: 0;
+    border: 1px solid rgb(219, 213, 213);
+    padding: 8px 14px;
+    border-radius: 8px;
+    width: 100%;
+    height: 50px;
+  }
+  
+  .form textarea {
+    border-radius: 8px;
+    height: 100px;
+    width: 100%;
+    resize: none;
+    outline: 0;
+    padding: 8px 14px;
+    border: 1px solid rgb(219, 213, 213);
+  }
+  
+  .form button {
+    align-self: flex-end;
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: royalblue;
+    color: #fff;
+    cursor: pointer;
+  }
+  
