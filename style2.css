@@ -629,12 +629,12 @@ nav a:hover::before {
   background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
 }
 .feed .header .image2 {
-  height: 4rem;
-  width: 4rem;
+   height: 4.7rem;
+  width: 6rem;
   border-radius: 9999px;
   background-size: cover;
   background-position: center;
-  background-image: url(https://images.healthshots.com/healthshots/en/uploads/2020/12/08182549/positive-person.jpg);
+  background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
 }
 
 .feed .stars {
