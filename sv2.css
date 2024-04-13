@@ -75,8 +75,8 @@ header {
   }
   .dropdown-menu {
     position: fixed;
-    width: 195.5%; /* Adjusted to auto to prevent overflow */
-    height: 192%; /* Adjusted to auto to prevent overflow */
+    width: 202%; /* Adjusted to auto to prevent overflow */
+    height: 200%; /* Adjusted to auto to prevent overflow */
     border-radius: 10px;
   
     color: #ff4d3b;
@@ -195,6 +195,30 @@ header {
     background-color: royalblue;
     color: #fff;
     cursor: pointer;
+  }
+  .spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #2c07fd; /* Blue color */
+    border-radius: 50%;
+    width: 100px; /* Increased size */
+    height: 100px; /* Increased size */
+    position: fixed; /* Fixed position */
+    top: 40%; /* Center vertically */
+    left: 45%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* Ensure it's above modal */
+    display: none; /* Hide by default */
+    animation: spin 1s infinite linear, flicker 1.5s infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
   
 

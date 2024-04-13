@@ -50,7 +50,7 @@ function sendEmail() {
         valid = false;
     }
     if (!number.value.trim()) {
-        displayError(number, "Phone Number is required.");
+      
         valid = false;
     }
     if (!subject.value.trim()) {
@@ -201,4 +201,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
- 
+
+  
