@@ -108,17 +108,10 @@ nav button {
   height: 30%;
 }
 
-nav a {
-  position: relative;
-  font-size: 22px;
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 40px;
-}
 nav a:hover {
   text-decoration: none;
   color: #1087ff;
+  transition: 0.2s;
 }
 
 nav a:hover::before {

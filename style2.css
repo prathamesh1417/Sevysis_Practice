@@ -177,17 +177,20 @@ nav a:hover::before {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-/* Adjust the modal backdrop opacity */
+
 .modal-backdrop.show {
-  opacity: 0.5; /* You can change this value to make it lighter */
+  opacity: 0.5; 
 }
 
-/* Ensure the modal is on top of other content */
+
 .modal {
-  z-index: 1050; /* Standard z-index for Bootstrap modals */
+  z-index: 1050;
 }
 
-
+#number {
+  height: 38px;
+  border-radius: 0.25rem;
+}
 .form {
   position: relative;
   display: flex;
@@ -246,16 +249,16 @@ nav a:hover::before {
 
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
-  border-top: 8px solid #2c07fd; /* Blue color */
+  border-top: 8px solid #2c07fd; 
   border-radius: 50%;
-  width: 100px; /* Increased size */
-  height: 100px; /* Increased size */
-  position: fixed; /* Fixed position */
-  top: 40%; /* Center vertically */
-  left: 45%; /* Center horizontally */
+  width: 100px; 
+  height: 100px;
+  position: fixed; 
+  top: 40%; 
+  left: 45%; 
   transform: translate(-50%, -50%);
-  z-index: 1050; /* Ensure it's above modal */
-  display: none; /* Hide by default */
+  z-index: 1050; 
+  display: none; 
   animation: spin 1s infinite linear, flicker 1.5s infinite;
 }
 
@@ -268,6 +271,25 @@ nav a:hover::before {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
+
+   /* CSS for flag icons */
+.flag-icon-container {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.flag-icon {
+  width: 1.5em; /* Adjust size as needed */
+  height: auto;
+}
+
+/* CSS for country code text */
+#countryCodeText {
+  font-size: small;
+  padding: 0 5px;
+}
+
 
 
 .section-all {

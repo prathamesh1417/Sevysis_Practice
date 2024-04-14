@@ -263,6 +263,14 @@ svg {
 .test .slider__test{
     font-size: 16px;
 }
+.custom-bullet {
+  list-style-type: disc;
+  padding-left: 15px; 
+  font-size: 1.7rem;
+  color: #ffffff; 
+}
+
+
 .slider-control.inactive:hover {
   cursor: auto;
 }

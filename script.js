@@ -50,7 +50,7 @@ function sendEmail() {
         valid = false;
     }
     if (!number.value.trim()) {
-      
+        displayError(number, "Invalid number.");
         valid = false;
     }
     if (!subject.value.trim()) {
@@ -118,7 +118,7 @@ displayContent();
 
 const responses = {
     "hello": "Hi there! How can I assist you today?",
-    "sevysis": "Here you will get a overview of our company, it's services, & many more.visit Sevysis.<a href='' target='_blank'>Visit Website</a>",
+    "sevysis": "Here you will get a overview of our company, it's services, & many more.Send a Enquiry to Sevysis.<a href='' target='_blank'>Visit Website</a>",
     "how are you?": "I'm just a bot, but I'm here to help you!",
     "need help": "How I can help you today?",
     "bye": "Goodbye! Have a great day!",
@@ -200,6 +200,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  function updateFlagAndCode() {
+    var countryCodeSelect = document.getElementById("countryCode");
+    var selectedCountryCode = countryCodeSelect.value;
+    var flagIcon = document.getElementById("selected-flag");
+    flagIcon.className = "flag-icon flag-icon-" + selectedCountryCode;
 
+    // Update country code in the input field
+    var countryCodeText = countryCodeSelect.options[countryCodeSelect.selectedIndex].text;
+    document.getElementById("countryCodeText").innerText = countryCodeText.split(" ")[0];
+}
 
-  
+// Attach event listener to country code select dropdown
+document.getElementById("countryCode").addEventListener("change", updateFlagAndCode);
+
+// Initial call to update flag icon and country code
+updateFlagAndCode();
+
+  // Initialize the intl-tel-input
+
