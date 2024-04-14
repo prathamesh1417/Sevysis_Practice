@@ -232,10 +232,17 @@
   <button id="chatbot-toggle-btn"><p>Chat with us!</p></button>
   <div class="chatbot-popup" id="chatbot-popup">
     <div class="chat-header">
-      <span ><a class="text-decoration-none" href="mailto:ankushb@sevysis.in" target="_blank">Sevysis Support</a></span>
+      <span><a class="text-decoration-none" href="mailto:ankushb@sevysis.in" target="_blank">Sevysis Support</a></span>
       <button id="close-btn"></button>
     </div>
-    <div class="chat-box" id="chat-box"></div>
+    <div class="chat-box">
+      <div class="suggestions-container" id="suggestions-container">
+        <!-- Suggestion questions will be added here by JS -->
+      </div>
+      <div class="message-container" id="message-container">
+        <!-- Chat messages will be displayed here -->
+      </div>
+    </div>
     <div class="chat-input">
       <input type="text" id="user-input" placeholder="Type a message..." autocomplete="off">
       <button id="send-btn">Send</button>
@@ -533,13 +540,13 @@
           <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-headert">
                   <h5 class="modal-title text-dark" id="termModalLabel">Terms & Conditions</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-bodyt">
                   <!-- Enquiry Form -->
                   <form class="term">
                     <div class="form-group">
@@ -585,13 +592,13 @@
           <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-headerp">
                   <h5 class="modal-title text-dark" id="polModalLabel">Privacy Policies</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body" id="modalBody">
+                <div class="modal-bodyp" id="modalBody">
                   <!-- Enquiry Form -->
                   <form id="enquiryForm">
                     <div class="form-group">
@@ -642,13 +649,13 @@
           <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-headerd">
                   <h5 class="modal-title text-dark" id="disModalLabel">Disclaimer</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-bodyd">
                   <!-- Enquiry Form -->
                   <form id="enquiryForm">
                     <div class="form-group">

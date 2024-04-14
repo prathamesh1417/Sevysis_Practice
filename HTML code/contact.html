@@ -5,6 +5,8 @@
 
   <link rel="shortcut icon" href="fancy.ico" type="x-icon">
   <link rel="stylesheet" href="/CSS/style7.css">
+  <link rel="stylesheet" href="/build/css/demo.css">
+  <link rel="stylesheet" href="/build/css/intlTelInput.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -81,20 +83,9 @@
             <div class="form-group">
               <label for="phone">Phone No.</label>
               <div class="input-group">
-                <select class="form-control" id="countryCode" style="font-size: small;">
-                  <!-- Example countries - add more as needed -->
-                  <option value="+91" data-country="in">India (+91)</option>
-                  <option value="+1" data-country="us">USA (+1)</option>
-                  <option value="+44" data-country="gb">UK (+44)</option>
-
-                  <!-- Add other countries as needed -->
-                </select>
-                <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off"
-                  style="font-size: small;">
+                  <input type="tel" class="form-control" id="phone" placeholder="Phone Number" autocomplete="off">
               </div>
-            </div>
-
-
+          </div>
             <div class="form-group">
               <label for="Subject">Subject</label>
               <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
@@ -111,48 +102,46 @@
       </div>
     </div>
   </div>
-
-
-
-
-
+  <script src="/build/js/intlTelInput.js"></script>
 
   <script>
+    
+    var input = document.querySelector("#phone")
+    window.intlTelInput(input, {});
 
-
-
-    document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+    
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
       e.preventDefault();
       document.getElementById('spinner').style.display = 'block';
-
+      
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
       var subject = document.getElementById('subject').value;
       var message = document.getElementById('message').value;
-
-
+  
+    
       fetch('demo.html')
         .then(response => response.text())
         .then(template => {
-
+          
           var htmlContent = template.replace('{{name}}', name).replace('{{subject}}', subject);
-
-
+  
+        
           var formData = new FormData();
-          formData.append('from', 'prathamesh.184054@gmail.com');
-          formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12');
-          formData.append('fromName', 'Sevysis');
-          formData.append('apikey', 'BF2B8DE0C177FA38135E9EA0A2A426954A64D81301A47F48E5B65A1D384524618D1177BFE97188601956C106E136AB6B'); // Replace with your actual API key
-          formData.append('subject', subject);
-          formData.append('to', email);
-          formData.append('Authentication', true);
-          formData.append('bodyHtml', htmlContent);
-          formData.append('isTransactional', true);
-          formData.append('secure', true);
-          formData.append('spam', false);
-
-
-
+      formData.append('from', 'prathamesh.184054@gmail.com');    
+      formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); 
+      formData.append('fromName', 'Sevysis');
+      formData.append('apikey', 'BF2B8DE0C177FA38135E9EA0A2A426954A64D81301A47F48E5B65A1D384524618D1177BFE97188601956C106E136AB6B'); // Replace with your actual API key
+      formData.append('subject', subject);
+      formData.append('to', email);
+      formData.append('Authentication', true);
+      formData.append('bodyHtml', htmlContent); 
+      formData.append('isTransactional', true); 
+      formData.append('secure', true);
+      formData.append('spam', false);
+      
+    
+         
           return fetch('https://api.elasticemail.com/v2/email/send', {
             method: 'POST',
             body: formData
@@ -161,23 +150,23 @@
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-
+            
             document.getElementById('spinner').style.display = 'none';
             Swal.fire({
               title: "Success!",
-              text: "Enquiry and appreciation email sent successfully!",
+              text: "Enquiry sent successfully!",
               icon: "success"
             }).then((result) => {
-              if (result.value) {
-                window.location.href = 'dashboard.html';
-              }
-            });
-
+      if (result.value) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  
           } else {
             document.getElementById('spinner').style.display = 'none';
             Swal.fire({
               title: "Error!",
-              text: "There was an issue sending the appreciation email. Please try again.",
+              text: "There was an issue sending the Enquiry. Please try again.",
               icon: "error"
             });
           }
@@ -195,6 +184,7 @@
             <h3>Get In Touch</h3>
             <ul class="breadcrumb">
               <li><a href="dashboard.html">Sevysis</a></li>
+             
               <li><a href="contact.html">Get in touch</a></li>
             </ul>
           </div>
@@ -238,9 +228,9 @@
           <div class="col-md-4">
             <div class="text-white small-box">
               <h2 class="text-white bg-dark">Be Social</h2>
-              <h4 class="text-primary">Twitter: SevysisIns1092</h4>
+              <h4 class="text-primary">YouTube: Sevysis</h4>
               <h5 class="text-primary">Instagram: sevysis </h5>
-              <p><a href="https://www.linkedin.com/company/sevysis/" class="text-dark bg-primary">Checkout our LinkdedIn
+              <p><a href="https://www.linkedin.com/company/sevysis/" class="text-dark bg-primary">Checkout on LinkdedIn
                 </a></p>
             </div><!-- end small-box -->
           </div><!-- end col -->
@@ -251,7 +241,7 @@
     </div>
   </section>
   <br>
-  <footer class="bg-dark text-white pt-4 pb-1">
+  <footer class="bg-dark text-white pt-2 pb-1">
     <div class=" bg-dark text-center text-md-left">
       <div class="row text-center text-md-left">
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -286,15 +276,11 @@
           <p>
             <a class="text-white" style="text-decoration: none">Flutter</a>
           </p>
+  
           <p>
-            <a class="text-white" style="text-decoration: none">Android Studio</a>
+            <a class="text-white" style="text-decoration: none">MS SQL</a>
           </p>
-          <p>
-            <a class="text-white" style="text-decoration: none">SQL</a>
-          </p>
-          <p>
-            <a class="text-white" style="text-decoration: none">MongoDB</a>
-          </p>
+     
         </div>
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -303,50 +289,44 @@
           </h5>
 
           <p>
-            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal"
-              data-target="#polModal">Privacy Policy</a>
+            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#polModal">Privacy Policy</a>
           </p>
 
           <p>
-            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal"
-              data-target="#disModal">Disclaimer</a>
+            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#disModal">Disclaimer</a>
           </p>
 
           <p>
-            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal"
-              data-target="#termModal">Terms & Conditions</a>
+            <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#termModal">Terms & Conditions</a>
           </p>
         </div>
 
-        <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel"
-          aria-hidden="true">
+        <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-headert">
                 <h5 class="modal-title text-dark" id="termModalLabel">Terms & Conditions</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-bodyt">
                 <!-- Enquiry Form -->
                 <form class="term">
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Terms & Conditions:-</label>
-                    <p class="text-dark">Please read these Terms and Conditions (“Terms”, “Terms and Conditions”)
-                      carefully before
+                    <p class="text-dark">Please read these Terms and Conditions (“Terms and Conditions”) carefully before
                       using the https://www.sevysis.in website (the “Service”) operated by My Company, sevysis
                       (“us”, “we”, or “our”). Your access to and use of the Service is conditioned on your
                       acceptance of and compliance with these Terms. These Terms apply to all visitors, users
                       and others who access or use the Service. By accessing or using the Service you agree to be
                       bound by these Terms. If you disagree with any part of the terms, then you may not access
                       the Service.</p>
-
+                  
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Termination:-</label>
-                    <p class="text-dark"> We may terminate or suspend access to our Service immediately, without prior
-                      notice or
+                    <p class="text-dark"> We may terminate or suspend access to our Service immediately, without prior notice or
                       liability, for any reason whatsoever, including without limitation if you breach the Terms. All
                       provisions of the Terms which by their nature should survive termination shall survive
                       termination, including, without limitation, ownership provisions, warranty disclaimers,
@@ -356,49 +336,45 @@
                       content, goods or services available on or through any such web sites or services. We
                       strongly advise you to read the terms and conditions and privacy policies of any third-party
                       web sites or services that you visit.</p>
-
+                  
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Changes:-</label>
-                    <p class="text-dark"> We reserve the right, at our sole discretion, to modify or replace these Terms
-                      at any time. If a
+                    <p class="text-dark">  We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
                       revision is material, we provide at least 30 days’ notice prior to any new terms taking effect.
                       What constitutes a material change will be determined at our sole discretion.</p>
-
+                  
                   </div>
-
+                
                 </form>
               </div>
             </div>
           </div>
         </div>
 
-
-        <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel"
-          aria-hidden="true">
+        
+        <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-headerp">
                 <h5 class="modal-title text-dark" id="polModalLabel">Privacy Policies</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body" id="modalBody">
+              <div class="modal-bodyp" id="modalBody">
                 <!-- Enquiry Form -->
                 <form id="enquiryForm">
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Privacy policy:-</label>
-                    <p class="text-dark">This page informs you of our privacy policies regarding the collection, use,
-                      and disclosure of
+                    <p class="text-dark">This page informs you of our privacy policies regarding the collection, use, and disclosure of
                       personal information we receive from users of Sevysis site. We use your personal
                       information only for administering and improving our website. By using this site, you agree to
                       the collection and use of information in accordance with this policy.</p>
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Information collection and Use:-</label>
-                    <p class="text-dark"> While using Sevysis website, we may ask you to provide us with certain contact
-                      information
+                    <p class="text-dark"> While using Sevysis website, we may ask you to provide us with certain contact information
                       that can be used to contact you. This contact information may include information such as
                       your name, mailing address, phone number, and email address but is not limited to this
                       information. We might use this contact information to send you marketing/promotional
@@ -406,16 +382,14 @@
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Log data:-</label>
-                    <p class="text-dark"> Like many site operators, we collect information that your browser sends
-                      whenever you visit
+                    <p class="text-dark"> Like many site operators, we collect information that your browser sends whenever you visit
                       our site. This Log Data may include information such as your computer’s Internet Protocol
                       (“IP”) address, browser type, browser version, and the pages that you visit on our site, the
                       time and date of your visit, the time spent on those pages and other statistics.</p>
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Cookies:-</label>
-                    <p class="text-dark"> Cookies are files with a small amount of data, which may include an anonymous
-                      unique
+                    <p class="text-dark"> Cookies are files with a small amount of data, which may include an anonymous unique
                       identifier. Cookies are sent to your browser from a website and stored on your computer’s
                       hard drive. Like many sites, we use “cookies” to collect information. You can instruct your
                       browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do
@@ -423,8 +397,7 @@
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Security:-</label>
-                    <p class="text-dark"> The security of your Personal Information is important to us, but remember
-                      that no method
+                    <p class="text-dark"> The security of your Personal Information is important to us, but remember that no method
                       of transmission over the Internet, or method of electronic storage, is 100% secure. While we
                       strive to use commercially acceptable means to protect your Personal Information, we
                       cannot guarantee its absolute security.</p>
@@ -434,49 +407,46 @@
             </div>
           </div>
         </div>
-
-
-        <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel"
-          aria-hidden="true">
+        
+        
+        
+        <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-headerd">
                 <h5 class="modal-title text-dark" id="disModalLabel">Disclaimer</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-bodyd">
                 <!-- Enquiry Form -->
                 <form id="enquiryForm">
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Disclaimer:-</label>
-                    <p class="text-dark"> Sevysis reserves the right to make corrections and changes, without warning,
-                      to the terms
+                    <p class="text-dark"> Sevysis reserves the right to make corrections and changes, without warning, to the terms
                       and conditions, information, or imagery. Certain hyperlinks (references outside of sevysis.in)
                       will take you to the sites of third parties. Sevysis is not liable for the information offered by
-                      third parties or other sites. The company has no control over the privacy policy of other
+                     third parties or other sites. The company has no control over the privacy policy of other
                       websites. You must refer to the privacy policy of the website where you submit the
                       information.
-                      Legal information is not legal advice. It is not providing legal advice. It is just for
-                      information
+                      Legal information is not legal advice. It is not providing legal advice. It is just for information
                       purposes only. You should contact your legal attorney for a particular problem or issue or
                       need. Read the disclaimer. By continuing to access or use our Service after those revisions
                       become effective, you agree to be bound by the revised terms. If you do not agree to the new
                       terms, please stop using the Service. Contact Us If you have any questions about these
                       Terms.</p>
-
+                  
                   </div>
                   <div class="form-group">
                     <label class="Name text-dark font-weight-bold">Legal Disclaimer:-</label>
-                    <p class="text-dark"> We reserve the right to disclose your Personally Identifiable Information as
-                      required by law
+                    <p class="text-dark"> We reserve the right to disclose your Personally Identifiable Information as required by law
                       when we trust that it is in the company’s interest to protect its property or other legal rights
                       or the property and rights of others.</p>
-
+                  
                   </div>
-
-
+                  
+                
                 </form>
               </div>
             </div>
@@ -489,9 +459,8 @@
           </h5>
 
           <p class="text-left"><i class="fas fa-home mr-2 "></i>Kharadi,
-            Pune-Nagar highway
-          <p class="text-left pl-4">Pune-411014 MH</p>
-          </p>
+            Pune-Nagar highway<p class="text-left pl-4">Pune-411014 MH</p>
+            </p>
 
           <p><i class="fas fa-envelope mr-3"></i>
             ankushb@sevysis.in</p>
@@ -504,31 +473,31 @@
 
       </div>
       <div class="row justify-content-center">
-        <div class="col col-lg-3 m-2 pt-1 pb-0">
+        <div class="col col-lg-3 m-1">
           <h5 class="text-uppercase text-center mb-3 font-weight-bold text-warning">
             Follow Us
           </h5>
           <div class="text-center">
             <ul class="list-unstyled list-inline">
               <li class="list-inline-item">
-                <a href="https://www.facebook.com/profile.php?id=61558176181227&mibextid=ZbWKwL"
-                  class="btn-floating btn-sm text-white" style="font-size: 23px"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61558176181227&mibextid=ZbWKwL" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                    class="fab fa-facebook-f"></i></a>
               </li>
               <li class="list-inline-item">
                 <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
                     class="fab fa-twitter"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.instagram.com/sevysis?utm_source=qr&igsh=MXBwZWhwMmEyejZxZg=="
-                  class="btn-floating btn-sm text-white" style="font-size: 23px"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/sevysis?utm_source=qr&igsh=MXBwZWhwMmEyejZxZg==" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                    class="fab fa-instagram"></i></a>
               </li>
               <li class="list-inline-item">
                 <a href="https://www.linkedin.com/company/sevysis/" class="btn-floating btn-sm text-white"
                   style="font-size: 23px"><i class="fab fa-linkedin"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.youtube.com/@Sevysis" class="btn-floating btn-sm text-white"
-                  style="font-size: 23px"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.youtube.com/@Sevysis" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
+                    class="fab fa-youtube"></i></a>
               </li>
             </ul>
           </div>
@@ -537,7 +506,7 @@
 
       <hr class="mb-0">
       <div class="row align-items-center">
-        <div class="col-md-1 col-lg-5 pl-5 pt-2 p-1">
+        <div class="col-md-1 col-lg-5 pl-5 pt-1 p-1">
 
           <p>Copyright @2023 All rights reserved by:
 

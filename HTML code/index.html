@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/CSS/sevysis.css">
+  <link rel="stylesheet" href="/build/css/demo.css">
+  <link rel="stylesheet" href="/build/css/intlTelInput.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -79,19 +81,9 @@
             <div class="form-group">
               <label for="phone">Phone No.</label>
               <div class="input-group">
-                <select class="form-control" id="countryCode" style="font-size: small;">
-                  <!-- Example countries - add more as needed -->
-                  <option value="+91" data-country="in">India (+91)</option>
-                  <option value="+1" data-country="us">USA (+1)</option>
-                  <option value="+44" data-country="gb">UK (+44)</option>
-                  
-                  <!-- Add other countries as needed -->
-                </select>
-                <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off" style="font-size: small;">
+                  <input type="tel" class="form-control" id="phone" placeholder="Phone Number" autocomplete="off">
               </div>
-            </div>
-            
-            
+          </div>
             <div class="form-group">
               <label for="Subject">Subject</label>
               <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
@@ -108,13 +100,12 @@
       </div>
     </div>
   </div>
-  
-
-  
-  
-
+  <script src="/build/js/intlTelInput.js"></script>
 
   <script>
+    
+    var input = document.querySelector("#phone")
+    window.intlTelInput(input, {});
 
     
     document.getElementById('enquiryForm').addEventListener('submit', function(e) {
@@ -161,7 +152,7 @@
             document.getElementById('spinner').style.display = 'none';
             Swal.fire({
               title: "Success!",
-              text: "Enquiry and appreciation email sent successfully!",
+              text: "Enquiry sent successfully!",
               icon: "success"
             }).then((result) => {
       if (result.value) {
@@ -173,7 +164,7 @@
             document.getElementById('spinner').style.display = 'none';
             Swal.fire({
               title: "Error!",
-              text: "There was an issue sending the appreciation email. Please try again.",
+              text: "There was an issue sending the Enquiry. Please try again.",
               icon: "error"
             });
           }
@@ -262,7 +253,7 @@
     <div class="slider__content">
       <div class="slider__text">
         
-        <h2 >Attendance tracking solution</h2>
+        <h2 class="text-dark" >Attendance tracking solution</h2>
         <br>
        
         <p>An Attendance Tracking Solution (ATS) is a software system designed to automate and streamline the process of recording and managing attendance for various purposes, including employee attendance in businesses or student attendance in educational institutions. Many ATS systems support biometric technologies such as fingerprint scanning or facial recognition, or RFID (Radio-Frequency Identification) cards for accurate and secure attendance tracking.
@@ -295,7 +286,7 @@
     <div class="slider__content">
       <div class="slider__text">
         
-        <h2 >Campus management solution</h2>
+        <h2  >Campus management solution</h2>
         <br>
        
         <p>A Campus Management Solution (CMS) is a comprehensive software system designed to streamline and optimize various administrative tasks and processes within an educational institution's campus. It integrates various functionalities to efficiently manage student information, academic operations, campus facilities, finance, and administrative processes. Solution helps educational institutions streamline administrative processes, improve communication and collaboration, enhance student learning outcomes, and achieve operational efficiency. It serves as a comprehensive platform to support the holistic management of a campus and contribute to the overall success of the institution.
@@ -328,7 +319,7 @@
     </div>
     <div class="slider__content">
       <div class="slider__text">
-        <h2>
+        <h2 class="text-primary">
           Account and finance management
         </h2>
         <br>
@@ -347,7 +338,7 @@
     </div>
     <div class="slider__content">
       <div class="slider__text">
-        <h2>Course and curriculum management</h2>
+        <h2 class="text-primary">Course and curriculum management</h2>
         <br>
        
         <p>Course and Curriculum Management Solution (CCMS) is a software system designed to facilitate the creation, management, and delivery of academic courses and curriculum within educational institutions. CCMS enables educators and administrators to design and plan academic programs and curriculum structures based on educational objectives, standards, and requirements. It supports the creation of course catalogs, program templates, and curriculum maps. This solution allows instructors to create and manage individual courses within the curriculum. It includes tools for defining course objectives, syllabi, learning outcomes, assignments, assessments, and other instructional materials.
@@ -360,6 +351,113 @@
       <figure class="slider__image">
 
         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+      </figure>
+
+    </div>
+    <div class="slider__content">
+      <div class="slider__text">
+        
+        <h2 >Library management</h2>
+        <br>
+       
+        <p>
+          Library Management refers to the systematic organization and administration of library
+          resources and services to meet the information needs of patrons effectively. A Library
+          Management System (LMS) is a software solution that facilitates the automation and
+          streamlining of various library operations.
+          The system allows librarians to catalog library materials such as books, journals, multimedia
+          items, and digital resources. It includes features for assigning unique identifiers (e.g., ISBN,
+          ISSN), entering metadata (e.g., title, author, subject), and classifying items using standard
+          classification systems (e.g., Dewey Decimal Classification, Library of Congress
+          Classification). Patrons can search for library materials using the system's search interface.
+          Search functionalities typically include keyword search, title search, author search, subject
+         search, and advanced search options. 
+        </p>
+      </div>
+      <figure class="slider__image">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+      </figure>
+
+    </div>
+    <div class="slider__content">
+      <div class="slider__text">
+        
+        <h2 >Communication and collaboration solution</h2>
+        <br>
+       
+        <p>
+          A Communication and Collaboration Solution (CCS) is a software platform designed to
+          facilitate efficient communication and collaboration among individuals or groups within an
+          organization. CCS provides real-time messaging capabilities, allowing users to
+          communicate with each other via text-based chat. This may include one-on-one
+          messaging, group chats, and the ability to share files, images, and links within the chat
+          interface. In this includes video conferencing functionality, enabling users to conduct
+          face-to-face meetings and collaborate in real-time regardless of their physical location.
+          Video conferencing features may include screen sharing, recording, and integration with
+          calendar apps for scheduling meetings.
+          With the help of this module we provides calendar and scheduling features to help users
+          manage their time effectively and coordinate meetings and events.
+        </p>
+      </div>
+      <figure class="slider__image">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+      </figure>
+
+    </div>
+    <div class="slider__content">
+      <div class="slider__text">
+        
+        <h2 >Examination management</h2>
+        <br>
+       
+        <p>
+          Examination management involves the planning, organization, administration, and
+          evaluation of examinations within an educational institution. A robust Examination
+          Management System (EMS) is essential to streamline these processes effectively.
+          The EMS facilitates the scheduling of examinations, including setting exam dates, times,
+          duration, and locations. It allows administrators to create exam timetables that minimize
+          conflicts and ensure efficient use of resources. The system manages student registration
+          and enrollment for exams. It enables students to register for exams online, select exam
+          dates and times, and receive confirmation of their registration. It also tracks exam fees,
+          waivers, and eligibility criteria.
+          The EMS includes a question bank where teachers can create, store, and organize exam
+          questions. It supports different question types such as multiple-choice, short answer,
+          essay.
+        </p>
+      </div>
+      <figure class="slider__image">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+      </figure>
+
+    </div>
+    <div class="slider__content">
+      <div class="slider__text">
+        
+        <h2 >Document and data management</h2>
+        <br>
+       
+        <p> 
+          Schools and students document and data management involve organizing, storing, and
+          accessing various types of documents and data related to students, academic records,
+          administrative processes, and school-related information. The system manages
+          various types of documents and files, including forms, lettersand
+          educational resources.
+          The system implements robust security measures to protect sensitive student data and
+          ensure compliance with data privacy regulations such as FERPA (Family Educational Rights
+          and Privacy Act). It includes features such as encryption, access controls, and data backup
+          to safeguard student information.
+ a comprehensive data management system for schools streamline
+ administrative processes, improve communication, enhance data security and privacy, and
+ support decision-making to ensure the success of and
+ the school community.
+        </p>
+      </div>
+      <figure class="slider__image">
+        <img src="https://images.unsplash.com/photo-1683803063663-3b1f28d97297?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 
       </figure>
 
@@ -380,11 +478,15 @@
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
   
   <!-- Add more dots for additional images -->
 </div>
 
-<footer class="bg-dark text-white pt-4 pb-1">
+<footer class="bg-dark text-white pt-2 pb-1">
   <div class=" bg-dark text-center text-md-left">
     <div class="row text-center text-md-left">
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -419,15 +521,11 @@
         <p>
           <a class="text-white" style="text-decoration: none">Flutter</a>
         </p>
+
         <p>
-          <a class="text-white" style="text-decoration: none">Android Studio</a>
+          <a class="text-white" style="text-decoration: none">MS SQL</a>
         </p>
-        <p>
-          <a class="text-white" style="text-decoration: none">SQL</a>
-        </p>
-        <p>
-          <a class="text-white" style="text-decoration: none">MongoDB</a>
-        </p>
+   
       </div>
 
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -451,18 +549,18 @@
       <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-headert">
               <h5 class="modal-title text-dark" id="termModalLabel">Terms & Conditions</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-bodyt">
               <!-- Enquiry Form -->
               <form class="term">
                 <div class="form-group">
                   <label class="Name text-dark font-weight-bold">Terms & Conditions:-</label>
-                  <p class="text-dark">Please read these Terms and Conditions (“Terms”, “Terms and Conditions”) carefully before
+                  <p class="text-dark">Please read these Terms and Conditions (“Terms and Conditions”) carefully before
                     using the https://www.sevysis.in website (the “Service”) operated by My Company, sevysis
                     (“us”, “we”, or “our”). Your access to and use of the Service is conditioned on your
                     acceptance of and compliance with these Terms. These Terms apply to all visitors, users
@@ -503,13 +601,13 @@
       <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-headerp">
               <h5 class="modal-title text-dark" id="polModalLabel">Privacy Policies</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div class="modal-body" id="modalBody">
+            <div class="modal-bodyp" id="modalBody">
               <!-- Enquiry Form -->
               <form id="enquiryForm">
                 <div class="form-group">
@@ -556,16 +654,17 @@
       </div>
       
       
+      
       <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-headerd">
               <h5 class="modal-title text-dark" id="disModalLabel">Disclaimer</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-bodyd">
               <!-- Enquiry Form -->
               <form id="enquiryForm">
                 <div class="form-group">
@@ -619,7 +718,7 @@
 
     </div>
     <div class="row justify-content-center">
-      <div class="col col-lg-3 m-2 pt-1 pb-0">
+      <div class="col col-lg-3 m-1">
         <h5 class="text-uppercase text-center mb-3 font-weight-bold text-warning">
           Follow Us
         </h5>
@@ -652,7 +751,7 @@
 
     <hr class="mb-0">
     <div class="row align-items-center">
-      <div class="col-md-1 col-lg-5 pl-5 pt-2 p-1">
+      <div class="col-md-1 col-lg-5 pl-5 pt-1 p-1">
 
         <p>Copyright @2023 All rights reserved by:
 

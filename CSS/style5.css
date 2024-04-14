@@ -130,9 +130,9 @@ nav a:hover::before {
   height: 3px;
   width: 100%;
   background-color: #f50d0d;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .spinner {
