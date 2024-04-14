@@ -4,7 +4,7 @@ const fullname = document.getElementById('name');
 const email = document.getElementById('email');
 const subject = document.getElementById('subject');
 const msg = document.getElementById('message');
-const number = document.getElementById('number');
+const number = document.getElementById('phone');
 const displayError = (inputField, errorMessage) => {
 
     let errorElement = inputField.parentElement.querySelector('.error-text');
@@ -200,22 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  function updateFlagAndCode() {
-    var countryCodeSelect = document.getElementById("countryCode");
-    var selectedCountryCode = countryCodeSelect.value;
-    var flagIcon = document.getElementById("selected-flag");
-    flagIcon.className = "flag-icon flag-icon-" + selectedCountryCode;
-
-    // Update country code in the input field
-    var countryCodeText = countryCodeSelect.options[countryCodeSelect.selectedIndex].text;
-    document.getElementById("countryCodeText").innerText = countryCodeText.split(" ")[0];
-}
-
-// Attach event listener to country code select dropdown
-document.getElementById("countryCode").addEventListener("change", updateFlagAndCode);
-
-// Initial call to update flag icon and country code
-updateFlagAndCode();
-
-  // Initialize the intl-tel-input
-
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to update the flag when a country is selected
+    document.getElementById('countrySelect').addEventListener('change', function() {
+        var selectedOption = this.options[this.selectedIndex];
+        var flagClass = selectedOption.dataset.countryFlag;
+        var countryCode = selectedOption.value;
+        var flagElement = document.getElementById('selected-flag');
+        flagElement.className = 'flag-icon ' + flagClass;
+        document.getElementById('countryCode').value = countryCode;
+    });
+});

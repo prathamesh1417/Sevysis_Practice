@@ -1,242 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sv1.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css" rel="stylesheet" />
-  <title>HRMS Solution</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/sv2.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css" rel="stylesheet" />
+  <title>Design & Development Solution</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo2">
-          <a href="dashboard.html"><img class="logo1" src="Capture1-removebg-preview.png">
-          </a>
+  <header class="header">
+    <div class="logo2">
+      <a href="dashboard.html"><img class="logo1" src="/Web Images/Capture1-removebg-preview.png">
+      </a>
+    </div>
+
+    <nav class="nav">
+      <ul>
+
+        <a href="dashboard.html">Home</a>
+        
+        <a href="contact.html">Find Us</a>
+        <a href="LearnMore.html">Learn More</a>
+        <a href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a>
+        <!-- Modal -->
+
+       
+        <div class="dropdown">
+          <li class="navbar-text dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              Services
+              
+            </a>
+            <div class="dropdown-menu p-8 " aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item-text pl-0" href="index.html">Education Management</a>
+              <a class="dropdown-item-text pl-0" href="index1.html">Hospital & Pathlab Solution</a>
+              <a class="dropdown-item-text pl-0" href="index2.html">Design & Development</a>
+              <a class="dropdown-item-text pl-0" href="index3.html">HRMS Solution</a>
+
+            </div>
+          </li>
         </div>
-    
-        <nav class="nav">
-          <ul>
-    
-            <a href="dashboard.html">Home</a>
-            <a href="LearnMore.html">Learn More</a>
-            <a href="contact.html">Find Us</a>
-            <a href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a>
-            <!-- Modal -->
-    
-           
-            <div class="dropdown">
-              <li class="navbar-text dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Services
-                </a>
-                <div class="dropdown-menu p-8 " aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item-text pl-0" href="index.html">Education Management</a>
-                  <a class="dropdown-item-text pl-0" href="index1.html">Hospital & Pathlab Solution</a>
-                  <a class="dropdown-item-text pl-0" href="index2.html">Design & Development</a>
-                  <a class="dropdown-item-text pl-0" href="index3.html">HRMS Solution</a>
-    
-                </div>
-              </li>
+
+
+        <!-- <button class="navbar-btn btn btn-danger" onclick="logout()">Logout</button> -->
+
+      </ul>
+    </nav>
+  </header>
+  <div class="modal fade" id="enquiryModal" tabindex="-1" role="dialog" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <!-- Spinner Loader -->
+      <div id="spinner" class="spinner"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Enquiry Form -->
+          <form id="enquiryForm">
+            <div class="form-group">
+              <label for="Name">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off">
             </div>
-    
-    
-            <!-- <button class="navbar-btn btn btn-danger" onclick="logout()">Logout</button> -->
-    
-          </ul>
-        </nav>
-      </header>
-      <div class="modal fade" id="enquiryModal" tabindex="-1" role="dialog" aria-labelledby="enquiryModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+            <div class="form-group">
+              <label for="Email">Email Id</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email id" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone No.</label>
+              <div class="input-group">
+                <select class="form-control" id="countryCode" style="font-size: small;">
+                  <!-- Example countries - add more as needed -->
+                  <option value="+91" data-country="in">India (+91)</option>
+                  <option value="+1" data-country="us">USA (+1)</option>
+                  <option value="+44" data-country="gb">UK (+44)</option>
+                  
+                  <!-- Add other countries as needed -->
+                </select>
+                <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off" style="font-size: small;">
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <label for="Subject">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" placeholder="Enter a message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
           <!-- Spinner Loader -->
-          <div id="spinner" class="spinner"></div>
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <!-- Enquiry Form -->
-              <form id="enquiryForm">
-                <div class="form-group">
-                  <label for="Name">Full Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="Email">Email Id</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email id" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone No.</label>
-                  <div class="input-group">
-                    <select class="form-control" id="countryCode" style="font-size: small;">
-                      <!-- Example countries - add more as needed -->
-                      <option value="+91" data-country="in">India (+91)</option>
-                      <option value="+1" data-country="us">USA (+1)</option>
-                      <option value="+44" data-country="gb">UK (+44)</option>
-                      
-                      <!-- Add other countries as needed -->
-                    </select>
-                    <input type="text" class="form-control" id="number" placeholder="Enter Phone Number" autocomplete="off" style="font-size: small;">
-                  </div>
-                </div>
-                
-                
-                <div class="form-group">
-                  <label for="Subject">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea class="form-control" id="message" placeholder="Enter a message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-              <!-- Spinner Loader -->
-              <div id="spinner" class="spinner" style="display: none;"></div>
-            </div>
-          </div>
+          <div id="spinner" class="spinner" style="display: none;"></div>
         </div>
       </div>
+    </div>
+  </div>
+  
+
+  
+  
+
+
+  <script>
+
+
+    
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('spinner').style.display = 'block';
       
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value;
+  
     
-      
-      
-    
-    
-      <script>
- 
-    
-        
-        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          document.getElementById('spinner').style.display = 'block';
+      fetch('demo.html')
+        .then(response => response.text())
+        .then(template => {
           
-          var name = document.getElementById('name').value;
-          var email = document.getElementById('email').value;
-          var subject = document.getElementById('subject').value;
-          var message = document.getElementById('message').value;
-      
+          var htmlContent = template.replace('{{name}}', name).replace('{{subject}}', subject);
+  
         
-          fetch('demo.html')
-            .then(response => response.text())
-            .then(template => {
-              
-              var htmlContent = template.replace('{{name}}', name).replace('{{subject}}', subject);
+          var formData = new FormData();
+      formData.append('from', 'prathamesh.184054@gmail.com');    
+      formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); 
+      formData.append('fromName', 'Sevysis');
+      formData.append('apikey', 'BF2B8DE0C177FA38135E9EA0A2A426954A64D81301A47F48E5B65A1D384524618D1177BFE97188601956C106E136AB6B'); // Replace with your actual API key
+      formData.append('subject', subject);
+      formData.append('to', email);
+      formData.append('Authentication', true);
+      formData.append('bodyHtml', htmlContent); 
+      formData.append('isTransactional', true); 
+      formData.append('secure', true);
+      formData.append('spam', false);
       
+    
+         
+          return fetch('https://api.elasticemail.com/v2/email/send', {
+            method: 'POST',
+            body: formData
+          });
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
             
-              var formData = new FormData();
-          formData.append('from', 'prathamesh.184054@gmail.com');    
-          formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); 
-          formData.append('fromName', 'Sevysis');
-          formData.append('apikey', 'BF2B8DE0C177FA38135E9EA0A2A426954A64D81301A47F48E5B65A1D384524618D1177BFE97188601956C106E136AB6B'); // Replace with your actual API key
-          formData.append('subject', subject);
-          formData.append('to', email);
-          formData.append('Authentication', true);
-          formData.append('bodyHtml', htmlContent); 
-          formData.append('isTransactional', true); 
-          formData.append('secure', true);
-          formData.append('spam', false);
-          
-        
-             
-              return fetch('https://api.elasticemail.com/v2/email/send', {
-                method: 'POST',
-                body: formData
-              });
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success) {
-                
-                document.getElementById('spinner').style.display = 'none';
-                Swal.fire({
-                  title: "Success!",
-                  text: "Enquiry and appreciation email sent successfully!",
-                  icon: "success"
-                }).then((result) => {
-          if (result.value) {
-            window.location.href = 'dashboard.html';
-          }
-        });
-      
-              } else {
-                document.getElementById('spinner').style.display = 'none';
-                Swal.fire({
-                  title: "Error!",
-                  text: "There was an issue sending the appreciation email. Please try again.",
-                  icon: "error"
-                });
-              }
-            })
-            .catch(error => {
-              console.error('Error:', error);
+            document.getElementById('spinner').style.display = 'none';
+            Swal.fire({
+              title: "Success!",
+              text: "Enquiry and appreciation email sent successfully!",
+              icon: "success"
+            }).then((result) => {
+      if (result.value) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+  
+          } else {
+            document.getElementById('spinner').style.display = 'none';
+            Swal.fire({
+              title: "Error!",
+              text: "There was an issue sending the appreciation email. Please try again.",
+              icon: "error"
             });
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
         });
-      </script>
-    <section class="bullet">
-        <div class="container">
-            <h1>HRMS Solutions</h1>
-            <!-- Paragraph -->
-            <p class="mb-4"> HRMS (Human Resource Management System) software is a comprehensive
-                web based tool designed to streamline and automate various HR processes
-                within an all scales-type organization.HRMS software serves as a centralized
-                database for storing employee information, including personal details, contact
-                information, job history, performance reviews, and salary details.
-                HRMS software aims to enhance HR processes, improve employee
-                engagement, and optimize workforce management for organizations of all
-                sizes.</p>
-            
-            <!-- Bullet Points with Hover Effect and Icons -->
-            <h2 class="font-weight-bold">Key Features:-</h2>
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Recruitment & applicant tracking
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Onboarding
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Time & attendance tracking
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Payroll Management
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Performance Management
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Training & development
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-check-circle-fill"></i> Admin Benefits 
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-star-fill"></i> Employee self service
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-lightbulb-fill"></i> Analytics and reporting
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-lightbulb-fill"></i> Compliance management
-              </li>
-              <li class="list-group-item list-group-item-action">
-                <i class="bi bi-lightbulb-fill"></i> Integration capabilities and many more custom development
-              </li>
-              <!-- Add more list items as needed -->
+    });
+  </script>
+
+
+<div class="slider-container">
+  <div class="slider-control left inactive"></div>
+  <div class="slider-control right"></div>
+  <ul class="slider-pagi"></ul>
+  <div class="slider">
+    <div class="slide slide-0 active">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+          <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+        </svg>
+        <div class="slide__text">
+          <h2 class="slide__text-heading font-weight-bold">Website Design & Development</h2>
+          <p class="slide__text-desc"> Sevysis's methodology is comprehensive, integrating, top-notch technologies for application, website
+            and web portal development with solid strength
+            With a distinctive all-around and full-circle approach to website design and development, we
+            provide website designing services. Our main focus is to provide you with websites that stand
+            out from the thousands of others with an eye-catching design.</p>
+            <div class="test">
+            <h1>Sevysis focused on:-</h1>
+            <p class="slider__test">
+              <ul class="custom-bullet">
+                <li>Quality Requirement gathering</li>
+                <li>Agile Development and implementation</li>
+                <li>Bug free Delivery</li>
             </ul>
-          </div>
-          
-    </section>
-    <br>
-<br>
-<br>
+            </p>
+            
+            </div>
+           
+        </div>
+      </div>
+    </div>
+    <div class="slide slide-1 ">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+          <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+        </svg>
+        <div class="slide__text">
+          <h2 class="slide__text-heading font-weight-bold">Mobile app design & development</h2>
+          <p class="slide__text-desc"> Sevysis's methodology is comprehensive, integrating, top-notch technologies for mobile application,
+            Product and development with solid strength
+            Throughout the design and development process, collaboration between designers, developers, and
+            other stakeholders is crucial to ensure the success of the mobile app. Additionally, staying updated
+            with the latest trends should be beneficial.</p>
+          <div class="test">
+            <h1>Sevysis focused on:-</h1>
+            <p class="slider__test">   <ul class="custom-bullet">
+              <li>Quality Requirement gathering</li>
+              <li>Agile Development and implementation</li>
+              <li>Bug free Delivery</li>
+          </ul>
+        </p>
+            </div>
+        
+        </div>
+      </div>
+    </div>
+    <div class="slide slide-2">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+          <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+        </svg>
+        <div class="slide__text">
+          <h2 class="slide__text-heading font-weight-bold">Custom Design Development</h2>
+          <p class="slide__text-desc">Sevysis helps individuals, startup and companies create custom mobile and web-based apps.
+            with the process of designing, developing, and deploying software applications for specific
+            users or use cases.
+            Building custom business apps helps users design, build, and deploy applications to suit as
+            per their requirement. Custom development has a well-defined set of requirements that focus
+            on Compamies needs.
+           </p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="slide slide-3">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+          <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+        </svg>
+        <div class="slide__text">
+          <h2 class="slide__text-heading font-weight-bold">Redesign and Development</h2>
+          <p class="slide__text-desc font">Redesign and development refer to the process of improving and updating an existing product,
+            system, or service to enhance its functionality, usability, aesthetics. This
+            process involves several stages, including research, planning, design,
+            implementation, testing, and deployment
+            Throughout the entire process,collaboration and communication among cross-functional
+            teams are important</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer class="bg-dark text-white pt-4 pb-1">
   <div class=" bg-dark text-center text-md-left">
     <div class="row text-center text-md-left">
@@ -520,7 +567,6 @@
   </div>
 </footer>
 
-</body>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -533,7 +579,13 @@ integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9
 crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="script.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="/JS Code/slide.js"></script>
+
+  
+</body>
+
 </html>

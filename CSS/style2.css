@@ -157,9 +157,10 @@ nav a {
   font-size: 22px;
   color: #fff;
   font-weight: 500;
-  text-decoration: none;
   margin-left: 40px;
+  overflow: hidden; /* Add this line */
 }
+
 nav a:hover {
   text-decoration: none;
   color: #1087ff;
@@ -173,10 +174,11 @@ nav a:hover::before {
   height: 3px;
   width: 100%;
   background-color: #f50d0d;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
 }
+
 
 .modal-backdrop.show {
   opacity: 0.5; 
@@ -272,25 +274,10 @@ nav a:hover::before {
   50% { opacity: 0.5; }
 }
 
-   /* CSS for flag icons */
-.flag-icon-container {
-  display: flex;
-  align-items: center;
-  padding-right: 5px;
+.form-group #phone{
+  
+  width: 185%;
 }
-
-.flag-icon {
-  width: 1.5em; /* Adjust size as needed */
-  height: auto;
-}
-
-/* CSS for country code text */
-#countryCodeText {
-  font-size: small;
-  padding: 0 5px;
-}
-
-
 
 .section-all {
   position: relative;
@@ -310,9 +297,10 @@ nav a:hover::before {
 }
 #chatbot-toggle-btn {
   position: fixed;
-  bottom: 20px;
+  height: 50px;
+  bottom: 10px;
   right: 20px;
-  padding: 12px 15px;
+  padding: 12px 10px;
   border: none;
   background-color: #1087ff;
   color: #fff;

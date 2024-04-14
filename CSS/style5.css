@@ -108,10 +108,18 @@ nav button {
   height: 30%;
 }
 
+nav a {
+  position: relative;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  overflow: hidden; /* Add this line */
+}
+
 nav a:hover {
   text-decoration: none;
   color: #1087ff;
-  transition: 0.2s;
 }
 
 nav a:hover::before {
@@ -126,6 +134,7 @@ nav a:hover::before {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
+
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
   border-top: 8px solid #2c07fd; /* Blue color */
