@@ -1,4 +1,4 @@
-// Function to display the content without session checks
+
 const form = document.querySelector('form');
 const fullname = document.getElementById('name');
 const email = document.getElementById('email');
@@ -105,19 +105,19 @@ $(document).ready(function(){
     $('.slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false, // Disable default arrows
+      arrows: false, 
       fade: true,
-      autoplay: true, // Enable autoplay
-      autoplaySpeed: 2000, // Set autoplay speed to 2000 milliseconds (2 seconds)
+      autoplay: true, 
+      autoplaySpeed: 2000, 
     });
   
-    // Add event listener to dots
+    
     $('.slider__dots .dot').on('click', function() {
       var dotIndex = $(this).index();
       $('.slider').slick('slickGoTo', dotIndex);
     });
   
-    // Update active dot based on current slide
+    
     $('.slider').on('afterChange', function(event, slick, currentSlide) {
       $('.slider__dots .dot').removeClass('active');
       $('.slider__dots .dot').eq(currentSlide).addClass('active');

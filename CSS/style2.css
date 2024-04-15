@@ -481,8 +481,8 @@ nav a:hover::before {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .bot-message {
-  background-color: #1087ff;
-  color: #fff;
+  background-color: #10ff8f;
+  color: #000000;
   padding: 8px;
   border-radius: 15px;
   margin: 10px 30px; 

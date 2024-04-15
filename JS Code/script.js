@@ -1,4 +1,4 @@
-// Function to display the content without session checks
+
 const form = document.querySelector('form');
 const fullname = document.getElementById('name');
 const email = document.getElementById('email');
@@ -116,122 +116,159 @@ window.logout = logout;
 
 displayContent();
 
-// JavaScript code for the chatbot with suggestions
-
-// Responses object
+// JavaScript Code
 const responses = {
-    "hello": "Hi there! How can I assist you today?",
-    "sevysis": "Here you will get an overview of our company, its services, & many more. Send an Enquiry to Sevysis.<a href='' target='_blank'>Visit Website</a>",
-    "how are you?": "I'm just a bot, but I'm here to help you!",
-    "need help": "How can I help you today?",
-    "bye": "Goodbye! Have a great day!",
-    "default": "I'm sorry, I didn't understand that. Want to connect with an expert?",
-    "expert": "Great! Please wait a moment while we connect you with an expert.",
-    "no": "Okay, if you change your mind just let me know!"
-  };
+  "hello": "Hi there! How can I assist you today?",
+  " What are your products/services?": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
+  "how are you?": "I'm just a bot, but I'm here to help you!",
   
-  // Suggestion questions
-  const suggestionQuestions = [
-    "Can I help you find a product?",
-    "Do you need assistance with an order?",
-    "Are you looking for information about our services?",
-    "Would you like to know more about our company?",
-    "Do you have any technical issues?"
-  ];
-  
-  // Event listeners for chatbot buttons
-  document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
-  document.getElementById('close-btn').addEventListener('click', toggleChatbot);
-  document.getElementById('send-btn').addEventListener('click', sendMessage);
-  document.getElementById('user-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  });
-  
-  // Toggle chatbot display
-  function toggleChatbot() {
-    const chatbotPopup = document.getElementById('chatbot-popup');
-    chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
-    if (chatbotPopup.style.display === 'block') {
-      populateSuggestions();
-    }
+  "Can you provide information about your company's values and mission?": "Please check company home page for value, mission and vision",
+  "Can you tell me more about [specific product/service]?": " For detail information regarding service, please go to sevysis official website and click on “services” section",
+    "Do you offer customization options": "Yes",
+  "What features does [product/service] have?": "Have lot of innovative feature as well as skilled team ready for customization as per your requirement",
+  "expert": "Great! Please wait a moment while we connect you with an expert.",
+  "no": "Okay, if you change your mind just let me know!"
+};
+
+const suggestionQuestions = [
+  "Is my personal information secure?",
+  "Do you offer customization options?",
+  "Are you looking for information about our services?",
+  "Would you like to know more about our company?",
+  "Do you have any technical issues?"
+];
+
+document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
+document.getElementById('close-btn').addEventListener('click', toggleChatbot);
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    sendMessage();
   }
-  
-  // Send message
-  function sendMessage() {
-    const userInput = document.getElementById('user-input').value.trim();
-    if (userInput !== '') {
-      appendMessage('user', userInput);
-      respondToUser(userInput.toLowerCase());
-      document.getElementById('user-input').value = '';
-    }
+});
+
+function toggleChatbot() {
+  const chatbotPopup = document.getElementById('chatbot-popup');
+  chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
+  if (chatbotPopup.style.display === 'block') {
+    populateSuggestions();
   }
-  
-  // Respond to user input
-  function respondToUser(userInput) {
-    const response = responses[userInput] || responses["default"];
-    setTimeout(function() {
-      appendMessage('bot', response);
-    }, 500);
+}
+
+function sendMessage() {
+  const userInput = document.getElementById('user-input').value.trim();
+  if (userInput !== '') {
+    appendMessage('user', userInput);
+    respondToUser(userInput.toLowerCase());
+    document.getElementById('user-input').value = '';
   }
-  
-  // Append message to chat
-  function appendMessage(sender, message) {
-    const chatBox = document.getElementById('message-container');
-    const messageElement = document.createElement('div');
-    messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
-    messageElement.innerHTML = message;
-    chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-  
-  // Populate suggestions
-  function populateSuggestions() {
-    const suggestionsContainer = document.getElementById('suggestions-container');
-    suggestionsContainer.innerHTML = ''; // Clear previous suggestions
-    suggestionQuestions.forEach(question => {
-      const suggestionElement = document.createElement('div');
-      suggestionElement.classList.add('suggestion');
-      suggestionElement.textContent = question;
-      suggestionElement.onclick = function() {
-        handleSuggestionClick(question);
-      };
-      suggestionsContainer.appendChild(suggestionElement);
-    });
-  }
-  
-  // Handle suggestion click
-  function handleSuggestionClick(question) {
-    const suggestionResponses = {
-      "Can I help you find a product?": "Sure, what type of product are you looking for?",
-      "Do you need assistance with an order?": "I can help with that. What's your order number?",
-      "Are you looking for information about our services?": "Yes, what would you like to know about our services?",
-      "Would you like to know more about our company?": "Certainly! What do you want to know about us?",
-      "Do you have any technical issues?": "I'm here to help. Can you describe the issue?"
-    };
-    const response = suggestionResponses[question];
+}
+
+function respondToUser(userInput) {
+  const response = responses[userInput] || responses["default"];
+  setTimeout(function() {
     appendMessage('bot', response);
-  }
+  }, 500);
+}
+
+function appendMessage(sender, message) {
+  const chatBox = document.getElementById('message-container');
+  const messageElement = document.createElement('div');
+  messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+  messageElement.innerHTML = message;
+  chatBox.appendChild(messageElement);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function populateSuggestions() {
+  const suggestionsContainer = document.getElementById('suggestions-container');
+  suggestionsContainer.innerHTML = ''; 
+  suggestionQuestions.forEach(question => {
+    const suggestionElement = document.createElement('div');
+    suggestionElement.classList.add('suggestion');
+    suggestionElement.textContent = question;
+    suggestionElement.onclick = function() {
+      handleSuggestionClick(question);
+    };
+    suggestionsContainer.appendChild(suggestionElement);
+  });
+}
+
+
+function handleSuggestionClick(question) {
+  const suggestionResponses = {
+    "Is my personal information secure?": "Yes, Completely secure",
+    "Do you offer customization options?": "Yes",
+    "Are you looking for information about our services?": "Yes, what would you like to know about our services? <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Would you like to know more about our company?": "Certainly! What do you want to know about us? <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>"
+  };
+  const response = suggestionResponses[question];
+  appendMessage('bot', response);
+}
+
+// Function to open the enquiry modal
+// Function to open the enquiry modal
+function openEnquiryModal() {
+  // Trigger the modal to open
+  $('#enquiryModal').modal('show');
+}
+
+// Function to close the enquiry modal
+function closeEnquiryModal() {
+  // Trigger the modal to close
+  $('#enquiryModal').modal('hide');
+}
+
+// Add this function to the form submission event or a close button within the modal
+document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
   
-  // Append default response buttons
-  function appendDefaultResponseButtons(chatBox) {
-    const buttonYes = document.createElement('button');
-    buttonYes.textContent = '✔ Yes';
-    buttonYes.onclick = function() {
-      appendMessage('bot', responses["expert"]);
-    };
-    const buttonNo = document.createElement('button');
-    buttonNo.textContent = '✖ No';
-    buttonNo.onclick = function() {
-      appendMessage('bot', responses["no"]);
-    };
-    const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('button-container');
-    buttonContainer.appendChild(buttonYes);
-    buttonContainer.appendChild(buttonNo);
-    chatBox.appendChild(buttonContainer);
-  }
+  // Show the spinner
+  document.getElementById('spinner').style.display = 'block';
+  
+  // Simulate form submission process
+  setTimeout(function() {
+    // Hide the spinner after the 'submission' is complete
+    document.getElementById('spinner').style.display = 'none';
+    
+    // Append a thank you message to the chat message section
+    appendMessage('bot', 'Thank you for your enquiry. We will get back to you shortly.');
+    
+    // Close the enquiry modal
+    closeEnquiryModal();
+    
+    // Clear the form inputs
+    document.getElementById('enquiryForm').reset();
+  }, 2000); // Adjust the timeout duration as needed
+});
+
+
+
+// If you have a close button within the modal, add an event listener to it
+document.querySelector('#enquiryModal .close').addEventListener('click', closeEnquiryModal);
+// Add this function where you handle the rest of your button events
+function appendDefaultResponseButtons(chatBox) {
+  const buttonYes = document.createElement('button');
+  buttonYes.textContent = '✔ Yes';
+  buttonYes.onclick = function() {
+    appendMessage('bot', responses["expert"]);
+  };
+
+  const buttonNo = document.createElement('button');
+  buttonNo.textContent = '✖ No';
+  buttonNo.onclick = function() {
+    appendMessage('bot', responses["no"]);
+  };
+
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('button-container');
+  buttonContainer.appendChild(buttonYes);
+  buttonContainer.appendChild(buttonNo);
+  chatBox.appendChild(buttonContainer);
+}
+
+  
   
 
 
@@ -258,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   document.addEventListener("DOMContentLoaded", function() {
-    // Function to update the flag when a country is selected
+    
     document.getElementById('countrySelect').addEventListener('change', function() {
         var selectedOption = this.options[this.selectedIndex];
         var flagClass = selectedOption.dataset.countryFlag;
