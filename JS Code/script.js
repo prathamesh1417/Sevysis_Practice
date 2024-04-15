@@ -116,7 +116,7 @@ window.logout = logout;
 
 displayContent();
 
-// JavaScript Code
+
 const responses = {
   "hello": "Hi there! How can I assist you today?",
   " What are your products/services?": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
@@ -207,47 +207,47 @@ function handleSuggestionClick(question) {
   appendMessage('bot', response);
 }
 
-// Function to open the enquiry modal
-// Function to open the enquiry modal
+
+
 function openEnquiryModal() {
-  // Trigger the modal to open
+  
   $('#enquiryModal').modal('show');
 }
 
-// Function to close the enquiry modal
+
 function closeEnquiryModal() {
-  // Trigger the modal to close
+  
   $('#enquiryModal').modal('hide');
 }
 
-// Add this function to the form submission event or a close button within the modal
+
 document.getElementById('enquiryForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
   
-  // Show the spinner
+  
   document.getElementById('spinner').style.display = 'block';
   
-  // Simulate form submission process
+  
   setTimeout(function() {
-    // Hide the spinner after the 'submission' is complete
+    
     document.getElementById('spinner').style.display = 'none';
     
-    // Append a thank you message to the chat message section
+    
     appendMessage('bot', 'Thank you for your enquiry. We will get back to you shortly.');
     
-    // Close the enquiry modal
+    
     closeEnquiryModal();
     
-    // Clear the form inputs
+    
     document.getElementById('enquiryForm').reset();
-  }, 2000); // Adjust the timeout duration as needed
+  }, 2000); 
 });
 
 
 
-// If you have a close button within the modal, add an event listener to it
+
 document.querySelector('#enquiryModal .close').addEventListener('click', closeEnquiryModal);
-// Add this function where you handle the rest of your button events
+
 function appendDefaultResponseButtons(chatBox) {
   const buttonYes = document.createElement('button');
   buttonYes.textContent = '✔ Yes';
