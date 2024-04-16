@@ -119,23 +119,28 @@ displayContent();
 
 const responses = {
   "hello": "Hi there! How can I assist you today?",
-  " What are your products/services?": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
-  "how are you?": "I'm just a bot, but I'm here to help you!",
-  
-  "Can you provide information about your company's values and mission?": "Please check company home page for value, mission and vision",
-  "Can you tell me more about [specific product/service]?": " For detail information regarding service, please go to sevysis official website and click on “services” section",
-    "Do you offer customization options": "Yes",
-  "What features does [product/service] have?": "Have lot of innovative feature as well as skilled team ready for customization as per your requirement",
-  "expert": "Great! Please wait a moment while we connect you with an expert.",
-  "no": "Okay, if you change your mind just let me know!"
+  "what are your products/services": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
+  "how are you": "I'm just a bot, but I'm here to help you!",
+  "can you provide information about your company's values and mission": "Please check company home page for value, mission and vision",
+  "can you tell me more about [specific product/service]": " For detail information regarding service, please go to sevysis official website and click on “services” section",
+  "do you offer customization options": "Yes",
+  "what features does [product/service] have": " We Have a lot of innovative feature as well as skilled team ready for customization as per your requirement",
+  "do you offer any discounts or promotions": "Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+  "do you have any packages or bundles available":"Please, go with the enquiry form and mention your query.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+  "can I upgrade my service plan":"Yes",
+  ".Do you offer any add-on services or features":"Yes",
+  "can you provide a tutorial or user manual": "Once service delivered, our expert team will contact you soon and team will give manual kit"
 };
 
 const suggestionQuestions = [
   "Is my personal information secure?",
+  "How much does[product/service] cost",
+  "How can I schedule an appointment?",
+  "What payment methods do you accept?",
+  "Do you have any technical issues?",
+  "Do you provide international service?",
   "Do you offer customization options?",
-  "Are you looking for information about our services?",
-  "Would you like to know more about our company?",
-  "Do you have any technical issues?"
+  
 ];
 
 document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
@@ -159,17 +164,21 @@ function sendMessage() {
   const userInput = document.getElementById('user-input').value.trim();
   if (userInput !== '') {
     appendMessage('user', userInput);
-    respondToUser(userInput.toLowerCase());
+    respondToUser(userInput.toLowerCase()|| userInput.toUpperCase());
     document.getElementById('user-input').value = '';
   }
 }
 
+
 function respondToUser(userInput) {
-  const response = responses[userInput] || responses["default"];
+  const response = responses[userInput] || "I'm sorry, I didn't get that! If you need any help, reach out to us through <a href='#' onclick='openEnquiryModal()'>this link</a>.";
   setTimeout(function() {
     appendMessage('bot', response);
   }, 500);
 }
+
+
+
 
 function appendMessage(sender, message) {
   const chatBox = document.getElementById('message-container');
@@ -198,10 +207,13 @@ function populateSuggestions() {
 function handleSuggestionClick(question) {
   const suggestionResponses = {
     "Is my personal information secure?": "Yes, Completely secure",
-    "Do you offer customization options?": "Yes",
-    "Are you looking for information about our services?": "Yes, what would you like to know about our services? <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-    "Would you like to know more about our company?": "Certainly! What do you want to know about us? <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-    "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>"
+    "How much does[product/service] cost": "Depends on requirement. For detail, please fill up enquiry form <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "How can I schedule an appointment?": " Please, go with the enquiry form and mention your query.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "What payment methods do you accept?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Do you provide international service?": "Yes",
+    "Do you offer customization options?": "Yes"
+   
   };
   const response = suggestionResponses[question];
   appendMessage('bot', response);
