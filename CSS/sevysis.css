@@ -176,6 +176,10 @@ nav a:hover::before {
   background-size: cover;
 }
 
+.modal-body #phone {
+  width: 467px;
+}
+
 .slider__content {
   display: flex !important;
   padding: 10px;

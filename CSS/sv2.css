@@ -119,6 +119,9 @@ header {
   .modal-backdrop.show {
     opacity: 0.5; /* You can change this value to make it lighter */
   }
+  .modal-body #phone {
+    width: 467px;
+  }
   
   /* Ensure the modal is on top of other content */
   .modal {

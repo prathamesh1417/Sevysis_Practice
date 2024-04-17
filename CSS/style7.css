@@ -131,7 +131,9 @@ nav a:hover::before {
   -o-transition: 0.2s;
   transition: 0.2s;
 }
-
+.modal-body #phone {
+  width: 467px;
+}
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
   border-top: 8px solid #2c07fd; /* Blue color */
