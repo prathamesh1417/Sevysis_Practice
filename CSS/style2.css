@@ -1,16 +1,8 @@
-/*
-* Prefixed by:
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 @import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -19,6 +11,7 @@ body {
   overflow-x: hidden;
 }
 .carousal {
+  width: 103%;
   height: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,24 +21,6 @@ body {
   justify-content: center;
   margin-top: -88px;
   /* Shadow effect */
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .carousal h4 {
@@ -112,38 +87,24 @@ nav {
 }
 
 .dropdown {
-  position: fixed;
-  bottom: 25%;
-  right: 39%;
-  left: 48%;
+  right: 10px;
+  bottom: 7.3px;
   font-size: 20px;
   height: 100%;
-  text-decoration: none;
+  transition: 0.1s ease;
 }
 .dropdown-menu {
   position: fixed;
   width: 195.5%; /* Adjusted to auto to prevent overflow */
-  height: 192%; /* Adjusted to auto to prevent overflow */
+  height: 292%; /* Adjusted to auto to prevent overflow */
   border-radius: 10px;
 
   color: #ff4d3b;
-  text-decoration: none;
 }
 .dropdown-menu a:hover {
   color: rgb(16, 63, 253);
 }
-.dropdown-menu a:hover::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #ffffff;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-}
+
 nav button {
   position: fixed;
   top: 20px;
@@ -158,6 +119,7 @@ nav a {
   color: #fff;
   font-weight: 500;
   margin-left: 40px;
+
   overflow: hidden; /* Add this line */
 }
 
@@ -179,14 +141,11 @@ nav a:hover::before {
   transition: 0.1s;
 }
 
-
 .modal-backdrop.show {
-  opacity: 0.5; 
+  opacity: 0.5;
 }
 
-
 .modal {
-  
   z-index: 1050;
 }
 
@@ -207,7 +166,12 @@ nav a:hover::before {
   box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
 }
 
-.modal-bodyt,.modal-headert,.modal-bodyp,.modal-headerp,.modal-bodyd,.modal-headerd{
+.modal-bodyt,
+.modal-headert,
+.modal-bodyp,
+.modal-headerp,
+.modal-bodyd,
+.modal-headerd {
   position: relative;
   right: 50px;
   width: 600px;
@@ -261,34 +225,41 @@ nav a:hover::before {
 
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
-  border-top: 8px solid #2c07fd; 
+  border-top: 8px solid #2c07fd;
   border-radius: 50%;
-  width: 100px; 
+  width: 100px;
   height: 100px;
-  position: fixed; 
-  top: 40%; 
-  left: 45%; 
+  position: fixed;
+  top: 40%;
+  left: 45%;
   transform: translate(-50%, -50%);
-  z-index: 1050; 
-  display: none; 
+  z-index: 1050;
+  display: none;
   animation: spin 1s infinite linear, flicker 1.5s infinite;
 }
 
 @keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
-.form-group #phone{
-  
-  width: 185%;
+.modal-body #phone {
+  width: 467px;
 }
-
 .section-all {
   position: relative;
   background-color: #fff;
@@ -320,7 +291,7 @@ nav a:hover::before {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  z-index: 1001; 
+  z-index: 1001;
 }
 #chatbot-toggle-btn:hover {
   background-color: #0074cc;
@@ -330,7 +301,7 @@ nav a:hover::before {
   position: fixed;
   bottom: 10px;
   right: 150px;
-  width: 500px; 
+  width: 500px;
   height: 550px;
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -364,42 +335,41 @@ nav a:hover::before {
 .chat-box {
   display: flex;
   flex-direction: row;
-  width: 100%; 
-  height: calc(100% - 120px); 
+  width: 100%;
+  height: calc(100% - 120px);
   overflow-y: auto;
 }
 .suggestions-container {
   width: 200px;
   border-right: 1px solid #ddd;
-  
-  height: 100%; 
-  padding: 0 10px; 
+
+  height: 100%;
+  padding: 0 10px;
 }
 
 .suggestion {
   background-color: #fff;
-  border: 1.3px solid #1087ff; 
-  padding: 5px 10px; 
+  border: 1.3px solid #1087ff;
+  padding: 5px 10px;
   border-radius: 3px;
   margin: 6px 0;
-  display: block; 
-  width: calc(115% - 20px); 
-  box-sizing: border-box; 
+  display: block;
+  width: calc(115% - 20px);
+  box-sizing: border-box;
   cursor: pointer;
-  font-size: 0.8em; 
-  text-align: center; 
+  font-size: 0.8em;
+  text-align: center;
 }
 
 .message-container {
   flex-grow: 1;
-  padding: 0 10px; 
+  padding: 0 10px;
 }
-
 
 .message-container {
   flex-grow: 1;
   overflow-y: auto;
-  height: 100%; 
+  height: 100%;
 }
 .chat-input {
   display: -webkit-box;
@@ -442,7 +412,7 @@ nav a:hover::before {
   color: #333;
   padding: 8px;
   border-radius: 15px;
-  margin: 15px 30px; 
+  margin: 15px 30px;
   position: relative;
   display: block;
   max-width: 80%;
@@ -453,10 +423,10 @@ nav a:hover::before {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
 }
 .user-message::before {
-  content: "\1F468"; 
+  content: "\1F468";
   position: absolute;
   bottom: -12px;
   right: -10px;
@@ -485,10 +455,10 @@ nav a:hover::before {
   color: #000000;
   padding: 8px;
   border-radius: 15px;
-  margin: 10px 30px; 
+  margin: 10px 30px;
   -ms-flex-item-align: start;
-  align-self: flex-start; 
-  margin-right: 10px; 
+  align-self: flex-start;
+  margin-right: 10px;
   position: relative;
   display: block;
   max-width: 80%;
@@ -499,10 +469,10 @@ nav a:hover::before {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; 
+  flex-direction: column;
 }
 .bot-message::before {
-  content: "\1F916"; 
+  content: "\1F916";
   position: absolute;
   bottom: -12px;
   right: -10px;
@@ -707,7 +677,7 @@ nav a:hover::before {
   background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
 }
 .feed .header .image2 {
-   height: 4rem;
+  height: 4rem;
   width: 4.3rem;
   border-radius: 9999px;
   background-size: cover;
@@ -908,4 +878,3 @@ nav a:hover::before {
     height: 10rem;
   }
 }
-

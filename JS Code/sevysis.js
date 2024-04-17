@@ -1,4 +1,16 @@
-
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.querySelector('.dropdown');
+    var dropdownMenu = document.querySelector('.dropdown-menu');
+  
+    dropdown.addEventListener('click', function(event) {
+      event.stopPropagation();
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  
+    document.addEventListener('click', function() {
+      dropdownMenu.style.display = 'none';
+    });
+  });
 const form = document.querySelector('form');
 const fullname = document.getElementById('name');
 const email = document.getElementById('email');

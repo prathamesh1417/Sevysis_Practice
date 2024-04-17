@@ -1,4 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.querySelector('.dropdown');
+  var dropdownMenu = document.querySelector('.dropdown-menu');
 
+  dropdown.addEventListener('click', function(event) {
+    event.stopPropagation();
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', function() {
+    dropdownMenu.style.display = 'none';
+  });
+});
 const form = document.querySelector('form');
 const fullname = document.getElementById('name');
 const email = document.getElementById('email');
@@ -115,13 +127,16 @@ window.logout = logout;
 
 
 displayContent();
-
+const smileEmoji = '😊';
+console.log(smileEmoji); // Output: 😊
 
 const responses = {
-  "hello": "Hi there! How can I assist you today?",
+  "hello": "Hello user! Good Day, How may I assist you? 😊",
+  "hi": "Hi user! Good Day, How may I assist you? 😊",
+  "hey": "Hey user! Good Day, How may I assist you? 😊",
   "what are your products/services": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
-  "how are you": "I'm just a bot, but I'm here to help you!",
-  "can you provide information about your company's values and mission": "Please check company home page for value, mission and vision",
+  "how are you": "I'm just a bot, but I'm here to help you! 😊",
+  "can you provide information about your company's values and mission": "Please check company home page for value, mission and vision 🧐",
   "can you tell me more about [specific product/service]": " For detail information regarding service, please go to sevysis official website and click on “services” section",
   "do you offer customization options": "Yes",
   "what features does [product/service] have": " We Have a lot of innovative feature as well as skilled team ready for customization as per your requirement",
@@ -206,11 +221,11 @@ function populateSuggestions() {
 
 function handleSuggestionClick(question) {
   const suggestionResponses = {
-    "Is my personal information secure?": "Yes, Completely secure",
-    "How much does[product/service] cost": "Depends on requirement. For detail, please fill up enquiry form <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-    "How can I schedule an appointment?": " Please, go with the enquiry form and mention your query.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Is my personal information secure?": "Yes, Completely secure 😉",
+    "How much does[product/service] cost": "Depends on requirement. For detail, please fill up enquiry form 🧐 <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "How can I schedule an appointment?": " Please, go with the enquiry form and mention your query 🧐.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
     "What payment methods do you accept?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-    "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+    "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon 🧐 <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
     "Do you provide international service?": "Yes",
     "Do you offer customization options?": "Yes"
    
