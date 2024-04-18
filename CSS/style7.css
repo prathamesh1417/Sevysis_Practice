@@ -134,6 +134,24 @@ nav a:hover::before {
 .modal-body #phone {
   width: 467px;
 }
+.span-right{
+  position: relative;
+  bottom: 30px;
+  text-align:right ;
+}
+.modal-bodyt,
+.modal-headert,
+.modal-bodyp,
+.modal-headerp,
+.modal-bodyd,
+.modal-headerd {
+  position: relative;
+  right: 50px;
+  width: 600px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+}
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
   border-top: 8px solid #2c07fd; /* Blue color */

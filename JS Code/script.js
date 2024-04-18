@@ -131,9 +131,9 @@ const smileEmoji = '😊';
 console.log(smileEmoji); // Output: 😊
 
 const responses = {
-  "hello": "Hello user! Good Day, How may I assist you? 😊",
-  "hi": "Hi user! Good Day, How may I assist you? 😊",
-  "hey": "Hey user! Good Day, How may I assist you? 😊",
+  "hello": "Hello user! I hope you're doing well, How may I assist you? 😊",
+  "hi": "Hi user! I hope you're doing well, How may I assist you? 😊",
+  "hey": "Hey user! I hope you're doing well, How may I assist you? 😊",
   "what are your products/services": "Sevysis is one service provider platform for education system, healthcare system,  HRMS system, web development, mobile app development, change management in existing/application software and customize development related website, and all other platform",
   "how are you": "I'm just a bot, but I'm here to help you! 😊",
   "can you provide information about your company's values and mission": "Please check company home page for value, mission and vision 🧐",

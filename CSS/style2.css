@@ -222,6 +222,17 @@ nav a:hover::before {
   color: #fff;
   cursor: pointer;
 }
+.chat-header #close-btn{
+  font-size: 18px;
+}
+.modal-headerd button span{
+  padding-bottom: 10%;
+}
+.span-right{
+  position: relative;
+  bottom: 30px;
+  text-align:right ;
+}
 
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
@@ -295,6 +306,9 @@ nav a:hover::before {
 }
 #chatbot-toggle-btn:hover {
   background-color: #0074cc;
+}
+.chat-header span:hover{
+  color: #ffffff;
 }
 .chatbot-popup {
   display: none;
@@ -395,6 +409,7 @@ nav a:hover::before {
   font-family: "Poppins", sans-serif;
   padding: 10px 20px;
   border: none;
+  font-size: 16px;
   background-color: #1087ff;
   color: #fff;
   border-radius: 12px;
@@ -430,7 +445,7 @@ nav a:hover::before {
   position: absolute;
   bottom: -12px;
   right: -10px;
-  left: -23px;
+  left: -30px;
   margin-bottom: 7px;
   font-size: 16px;
   background-color: #1087ff;
@@ -472,18 +487,18 @@ nav a:hover::before {
   flex-direction: column;
 }
 .bot-message::before {
-  content: "\1F916";
+content: url("/Icon1.png");
   position: absolute;
-  bottom: -12px;
-  right: -10px;
-  left: -23px;
+  bottom: 6px;
+  right: -19px;
+  left: -21px;
   margin-bottom: 4px;
   font-size: 16px;
-  background-color: #1087ff;
+  background-color: transparent;
   color: #fff;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 2px;
+  height: 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -723,7 +738,7 @@ nav a:hover::before {
 
 .container {
   position: relative;
-  bottom: 35px;
+  bottom: 75px;
 }
 .indicator {
   text-align: center;
