@@ -487,7 +487,7 @@ nav a:hover::before {
   flex-direction: column;
 }
 .bot-message::before {
-content: url("/Icon1.png");
+content: url("/Icon.png");
   position: absolute;
   bottom: 6px;
   right: -19px;
@@ -738,7 +738,7 @@ content: url("/Icon1.png");
 
 .container {
   position: relative;
-  bottom: 75px;
+  bottom: 86px;
 }
 .indicator {
   text-align: center;
