@@ -1,3 +1,5 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
 @import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -778,11 +780,7 @@ content: url("/Icon.png");
   font-size: 1em;
 }
 
-@media (max-width: 576px) {
-  .indicator {
-    margin-bottom: 10px;
-  }
-}
+
 
 /* Keyframe animations */
 @-webkit-keyframes slideInDown {
@@ -835,61 +833,61 @@ content: url("/Icon.png");
     opacity: 1;
   }
 }
-@media (max-width: 992px) {
-  .header {
-    padding: 0.1rem 5%;
+
+/* Media query for tablets */
+@media (max-width: 767px) {
+  header {
+    padding: 15px; /* Reduced padding for better spacing on smaller screens */
+  }
+  .carousel-inner img {
+    max-width: 100%; /* Ensure carousel images are responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .feed .card {
+    flex-basis: 100%; /* Full width cards for smaller screens */
+    margin: 10px; /* Add some margin around cards */
   }
 }
-@media (max-width: 768px) {
-  .header h1 {
-    display: inline-block;
+
+/* Media query for small desktops and large tablets */
+@media (max-width: 992px) {
+  header {
+    height: 60px; /* Adjusted height for better fit */
+    padding: 0 20px; /* Adjust padding */
   }
-  .nav {
-    position: absolute;
-    top: 80%;
-    left: 0;
-    width: 100%;
-    height: 8rem;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+  .carousal h4 {
+    bottom: 20px; /* Adjusted position for visibility */
+    font-size: 1.5rem; /* Adjusted font size for readability */
+  }
+  nav {
+    display: block; /* Show nav items in a more suitable layout */
   }
   .dropdown {
-    position: absolute;
-    top: -5%;
-    left: 0;
-    width: 100%;
-  }
-  .dropdown-menu {
-    width: 50%;
-    font-size: 300;
-    border-radius: 8px;
-    background: transparent;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    display: block; /* Show dropdown */
   }
   nav button {
-    position: relative;
-    top: -102%;
-    left: 84%;
-    font-weight: 600;
-    height: 23%;
+    display: none; /* Hide navbar toggle button as nav is visible */
   }
-  .nav a {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    font-size: 1.2rem;
-    padding: 9.5px;
-    margin: 11px;
-    text-align: center;
+  .feed .card {
+    flex-basis: calc(50% - 20px); /* Adjust card width for 2-column layout */
+    margin: 10px; /* Add some margin around cards */
   }
-  .hero {
-    margin-top: 20px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  header {
+    height: 90px; /* Adjusted height for mobile devices */
+    padding: 0px 15px; /* Adjust padding for mobile devices */
   }
-  .container {
-    top: 180%;
-    left: 0;
-    width: 100%;
-    height: 10rem;
+  .carousal h4 {
+    font-size: 1.2rem; /* Adjusted font size for mobile devices */
+  }
+  .logo1{
+    padding-left: 50px;
+  }
+  .feed .card {
+    flex-basis: calc(100% - 20px); /* Full width cards for mobile devices */
+    margin: 10px; /* Add some margin around cards */
   }
 }

@@ -193,7 +193,11 @@ nav a:hover::before {
 .modal-body #phone {
   width: 467px;
 }
-
+.span-right{
+  position: relative;
+  bottom: 30px;
+  text-align:right ;
+}
 .slider__content {
   display: flex !important;
   padding: 10px;

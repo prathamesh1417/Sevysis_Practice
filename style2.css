@@ -778,9 +778,42 @@ content: url("/Icon.png");
   font-size: 1em;
 }
 
-@media (max-width: 576px) {
-  .indicator {
-    margin-bottom: 10px;
+@media screen and (max-width: 768px) {
+  body{
+    display: flex;
+  }
+  header{
+    display: flex;
+  }
+  nav{
+
+    display: flex;
+  }
+  nav a{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .dropdown{
+     display: flex;
+     left: 2rem;
+     bottom: 1.5rem;
+ 
+  }
+
+
+  .feed{
+    position: relative;
+    display: -webkit-box;
+    justify-content: center;
+  
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 5.2rem; /* This will create space between your cards */
+   
+
   }
 }
 
@@ -833,63 +866,5 @@ content: url("/Icon.png");
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@media (max-width: 992px) {
-  .header {
-    padding: 0.1rem 5%;
-  }
-}
-@media (max-width: 768px) {
-  .header h1 {
-    display: inline-block;
-  }
-  .nav {
-    position: absolute;
-    top: 80%;
-    left: 0;
-    width: 100%;
-    height: 8rem;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-  }
-  .dropdown {
-    position: absolute;
-    top: -5%;
-    left: 0;
-    width: 100%;
-  }
-  .dropdown-menu {
-    width: 50%;
-    font-size: 300;
-    border-radius: 8px;
-    background: transparent;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-  }
-  nav button {
-    position: relative;
-    top: -102%;
-    left: 84%;
-    font-weight: 600;
-    height: 23%;
-  }
-  .nav a {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    font-size: 1.2rem;
-    padding: 9.5px;
-    margin: 11px;
-    text-align: center;
-  }
-  .hero {
-    margin-top: 20px;
-  }
-  .container {
-    top: 180%;
-    left: 0;
-    width: 100%;
-    height: 10rem;
   }
 }

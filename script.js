@@ -75,10 +75,78 @@ function sendEmail() {
     }
    
     if (valid) {
-        const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}<br> Number: ${number.value}
-        <br> Subject: ${subject.value} <br> Message: ${msg.value}`;
+      // Define the HTML template
+      const htmlTemplate = `
+       
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    .h2{
+      
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .content {
+        margin-bottom: 20px;
+    }
+    .footer {
+        text-align: left;
+        margin-top: 20px;
+    }
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+      </style>
+    </head>
+    <body>
+        <body>
+            <div class='container'>
+            <div class='logo'>
+            <img src='https://i.postimg.cc/ncMRL37r/Untitled-3-6-removebg-preview.png' alt='School Logo'>
+        </div>
+        <h2>Client's Enquiry:-</h2>
+        <div class='content'>
         
-        
+            <p>Client Name : ${fullname.value},</p>
+            <p>Email Id : ${email.value}</p>
+            <p>Mobile Number :<strong> ${number.value}.</strong></p>
+            <p>Subject :<strong> ${subject.value}.</strong></p>
+            <p>Message : ${msg.value}.</strong></p>
+           
+        </div>
+        <div class='footer'>
+            <p>Sevysis<br>Pune, Maharashtra</p>
+            <p>End of the Message</p>
+            
+        </div>
+    </div>
+    </body>
+      <!-- Add more HTML content as needed -->
+    </body>
+    
+</html>
+      `;
        
         Email.send({
             SecureToken : "4b985981-407c-4986-b5f6-735991b38e12",
@@ -97,7 +165,7 @@ function sendEmail() {
             spam:false,
             ReplyTo: email.value, 
             Subject: subject.value,
-            Body: bodyMessage
+            Body: htmlTemplate
         })
     }
     };
@@ -332,3 +400,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('countryCode').value = countryCode;
     });
 });
+
