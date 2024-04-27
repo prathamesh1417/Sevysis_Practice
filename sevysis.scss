@@ -401,11 +401,12 @@ a.ib-mob, a.ib-mob:hover {
     width: 420px;
   }
   .dropdown{
-    display: flex;
-    padding-top: 3px;
-  
-
- }
+     display: flex;
+     bottom: 1.6rem;
+     left: 12rem;
+   
+ 
+  }
   .ib-address{
     align-items: center;
     display: flex;
@@ -427,6 +428,7 @@ a.ib-mob, a.ib-mob:hover {
     .slider__text {
       padding: 1.3rem; /* Reduce the padding */
       top: 4.5rem;
+      left: 6.5rem;
       text-align: center; /* Center the text */
       width: 30rem;
       h2 {
