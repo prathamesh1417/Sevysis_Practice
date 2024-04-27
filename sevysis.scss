@@ -403,7 +403,7 @@ a.ib-mob, a.ib-mob:hover {
   .dropdown{
      display: flex;
      bottom: 1.6rem;
-     left: 11rem;
+     left: 9.5rem;
    
  
   }
@@ -411,6 +411,10 @@ a.ib-mob, a.ib-mob:hover {
     align-items: center;
     display: flex;
     flex-direction: column;
+  }
+  footer {
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
   
 }
