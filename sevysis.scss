@@ -375,3 +375,68 @@ footer {
   padding: 20px 0; // Adjust padding as necessary
   margin-top: auto; // This helps to push the footer to the bottom if using flexbox on the parent container
 }
+a.ib-mob, a.ib-mob:hover {
+  color: unset;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .slider__dots{
+    display: flex;
+    top: 35.3rem;
+    
+}
+  header{
+    display: flex;
+  }
+  nav{
+     
+    display: flex;
+  }
+  nav a{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .modal-body #phone {
+    width: 420px;
+  }
+  .dropdown{
+     display: flex;
+     left: 2.5rem;
+     bottom: 1.6rem;
+ 
+  }
+  .ib-address{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .slider__wrapper {
+    height: 600px; /* Reduce the height of the slider */
+  }
+  
+  .slider__content {
+    flex-direction: column; /* Change the direction to vertical */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    width: 100%; /* Take up the full width */
+    
+    .slider__text {
+      padding: 1.3rem; /* Reduce the padding */
+      top: 4.5rem;
+      text-align: center; /* Center the text */
+      width: 30rem;
+      h2 {
+        font-size: 24px; /* Reduce the font size */
+      }
+      
+      p {
+        font-size: 13.8px; /* Reduce the font size */
+      }
+     
+    }
+  }
+}

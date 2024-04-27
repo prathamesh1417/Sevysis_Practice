@@ -519,7 +519,7 @@ a.slide__text-link:hover { text-decoration:none; color:#000000;}
 }
 @media (max-width: 991px) {
   .slide__text-heading {
-    line-height: 20rem;
+    line-height: 15rem;
     font-size: 3.5rem;
   }
 }
@@ -530,7 +530,8 @@ a.slide__text-link:hover { text-decoration:none; color:#000000;}
 }
 @media (max-width: 991px) {
   .slide__text-desc {
-    display: none;
+  display: block;
+   
   }
 }
 .slide__text-link {
@@ -578,8 +579,183 @@ footer {
     padding: 20px 0;
     margin-top: auto;
     z-index: 1;
-    font-size: 1.7rem; /* Increase font size */
+    font-size: 2.7rem; /* Increase font size */
     background-color: #f8f9fa; /* Example background color for visibility */
     text-align: center; /* Center the text */
     color: #333; /* Set text color for better readability */
+}
+
+
+@media only screen and (max-width: 479px) {
+
+  .slide:nth-child(1) .slide__text {
+    background-color: rgba(233, 156, 126, 0.8);
+  }
+
+  .slide:nth-child(2) {
+    left: 100%;
+  }
+
+  .slide:nth-child(2) .slide__bg {
+    left: -50%;
+    background-image: url("https://assets-global.website-files.com/60a76b562a2a810c0a6265fa/610a9dbcb7cb3b6e7a53ada5_Android.jpg");
+  }
+
+  .slide:nth-child(2) .slide__overlay-path {
+    fill: #121212;
+  }
+
+  .slide:nth-child(3) {
+    left: 200%;
+  }
+
+  .slide:nth-child(3) .slide__bg {
+    left: -100%;
+    background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  }
+
+  .slide:nth-child(3) .slide__overlay-path {
+    fill: #121212;
+  }
+
+  .slide:nth-child(4) {
+    left: 300%;
+  }
+
+  .slide:nth-child(4) .slide__bg {
+    left: -150%;
+    background-image: url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  }
+
+  .slide:nth-child(4) .slide__overlay-path {
+    fill:  #121212;
+  }
+
+}
+a.ib-mob, a.ib-mob:hover {
+  color: unset;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+ body{
+  display: contents;
+ }
+  header{
+    display: flex;
+  }
+  nav{
+
+    display: flex;
+  }
+  nav a{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .dropdown{
+     display: flex;
+     left: 3rem;
+     bottom: 1.8rem;
+ 
+  }
+  .modal-body,
+  .modal-header,
+  .modal-bodyp,
+  .modal-headerp,
+  .modal-bodyd,
+  .modal-headerd {
+    right: 0;
+    width: 100%;
+  }
+  .modal-body #phone {
+    width: 420px;
+  }
+  .slide__text {
+    width: 100%;
+    bottom: 0;
+    height: 13rem;
+    padding: 0 1rem;
+  }
+  .slide__text-heading {
+    font-size: 2.5rem;
+   font-weight: 600;
+  
+  }
+  .slide__text-desc {
+   font-weight: 600;
+   display: block;
+   
+    font-size: 1.8rem;
+    color: #07affd;
+   
+  }
+  .slide__text-desc {
+    padding-top: -200px;
+}
+  .slide__text-link {
+    font-size: 1.8rem;
+  }
+  .span-right {
+    font-size: 1.5rem;
+  }
+  .slider-control {
+    width: 10%;
+  }
+  .slider-pagi__elem {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.25rem;
+  }
+  .slider-pagi__elem:before {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .slide__text {
+    height: 12rem;
+  }
+  .slide__text-heading {
+    font-size: 2rem;
+  }
+ 
+  .slide__text-link {
+    font-size: 1.5rem;
+  }
+  .slide__text-desc {
+    font-size: 3rem;
+ 
+    
+  }
+  .span-right {
+    font-size: 1rem;
+    bottom: 10px;
+  }
+  .slider-control {
+    width: 15%;
+  }
+  footer {
+  
+    padding: 10px 0;
+  }
+  
+}
+@media(max-width:767px){
+  .about h1, .vision h1, .feed1 h1{
+    font-size:32px;
+  }
+  .about p{
+    font-size:16px;
+    line-height:normal;
+  }
+  .ib-address{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
 }

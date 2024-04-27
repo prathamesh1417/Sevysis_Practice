@@ -538,7 +538,7 @@ content: url("/Icon.png");
   width: 80%;
   margin: auto;
   text-align: center;
-  padding-top: 50px;
+  
 }
 .about button {
   position: relative;
@@ -552,7 +552,7 @@ content: url("/Icon.png");
   width: 80%;
   border-radius: 10px;
 }
-.about h1 {
+.about h1, .vision h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
   font-size: 40px;
@@ -565,7 +565,7 @@ content: url("/Icon.png");
   font-weight: 400;
   line-height: 29px;
   margin-bottom: 19px;
-  padding: 70px;
+  padding-bottom: 70px;
 }
 
 .vision {
@@ -581,7 +581,7 @@ content: url("/Icon.png");
   justify-content: center; /* Center cards horizontally */
   align-items: flex-start; /* Align cards to the start of the cross axis */
   padding-top: 90px;
-  padding-bottom: 190px;
+  padding-bottom: 140px;
   background-color: #ffffff;
 }
 
@@ -777,7 +777,10 @@ content: url("/Icon.png");
   display: block;
   font-size: 1em;
 }
-
+a.ib-mob, a.ib-mob:hover {
+  color: unset;
+  text-decoration: none;
+}
 @media screen and (max-width: 768px) {
   body{
     display: flex;
@@ -800,7 +803,9 @@ content: url("/Icon.png");
      bottom: 1.5rem;
  
   }
-
+  .modal-body #phone {
+    width: 420px;
+  }
 
   .feed{
     position: relative;
@@ -812,9 +817,44 @@ content: url("/Icon.png");
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 5.2rem; /* This will create space between your cards */
-   
 
   }
+  .feed {
+    flex-direction: column !important;
+    align-items: center;
+    row-gap: 30px;
+}
+.carousal{
+  padding-top:150px;
+}
+.chatbot-popup {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 20px;
+  width: 450px;
+  height: 33rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background-color: #fff;
+  transition: height 0.3s ease;
+}
+}
+@media(max-width:767px){
+  .about h1, .vision h1, .feed1 h1{
+    font-size:32px;
+  }
+  .about p{
+    font-size:16px;
+    line-height:normal;
+  }
+  .ib-address{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
 }
 
 /* Keyframe animations */

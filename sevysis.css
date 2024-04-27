@@ -193,11 +193,7 @@ nav a:hover::before {
 .modal-body #phone {
   width: 467px;
 }
-.span-right{
-  position: relative;
-  bottom: 30px;
-  text-align:right ;
-}
+
 .slider__content {
   display: flex !important;
   padding: 10px;
@@ -341,4 +337,63 @@ footer {
   width: 100%;
   padding: 20px 0;
   margin-top: auto;
+}
+
+a.ib-mob, a.ib-mob:hover {
+  color: unset;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .slider__dots {
+    display: flex;
+    top: 35.3rem;
+  }
+  header {
+    display: flex;
+  }
+  nav {
+    display: flex;
+  }
+  nav a {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .modal-body #phone {
+    width: 420px;
+  }
+  .dropdown {
+    display: flex;
+    left: 2.5rem;
+    bottom: 1.6rem;
+  }
+  .ib-address {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .slider__wrapper {
+    height: 600px; /* Reduce the height of the slider */
+  }
+  .slider__content {
+    flex-direction: column; /* Change the direction to vertical */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    width: 100%; /* Take up the full width */
+  }
+  .slider__content .slider__text {
+    padding: 1.3rem; /* Reduce the padding */
+    top: 4.5rem;
+    text-align: center; /* Center the text */
+    width: 30rem;
+  }
+  .slider__content .slider__text h2 {
+    font-size: 24px; /* Reduce the font size */
+  }
+  .slider__content .slider__text p {
+    font-size: 13.8px; /* Reduce the font size */
+  }
 }/*# sourceMappingURL=sevysis.css.map */
