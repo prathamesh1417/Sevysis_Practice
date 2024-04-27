@@ -567,11 +567,11 @@ CONTACT
     margin-right: 20px;
   }
   .dropdown{
-     display: flex;
-     left: 2rem;
-     bottom: 1.5rem;
- 
-  }
+    display: flex;
+    padding-top: 3px;
+  
+
+ }
   .modal-body #phone {
     width: 420px;
   }
