@@ -819,14 +819,22 @@ a.ib-mob, a.ib-mob:hover {
     gap: 5.2rem; /* This will create space between your cards */
 
   }
+  .carousal  {
+    position: absolute;
+   padding-bottom: 1rem;
+    color: #fbfbfb;
+    font-size: 40px;
+    font-weight: 600;
+    opacity: 0; /* Start with h4 text hidden */
+    -webkit-animation: fadeIn 1.5s ease-in forwards;
+    animation: fadeIn 1.5s ease-in forwards; /* Apply the animation */
+  }
   .feed {
     flex-direction: column !important;
     align-items: center;
     row-gap: 30px;
 }
-.carousal{
-  padding-top:150px;
-}
+
 .chatbot-popup {
   display: none;
   position: fixed;
