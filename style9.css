@@ -579,7 +579,7 @@ footer {
     padding: 20px 0;
     margin-top: auto;
     z-index: 1;
-    font-size: 2.7rem; /* Increase font size */
+    font-size: 1.7rem; /* Increase font size */
     background-color: #f8f9fa; /* Example background color for visibility */
     text-align: center; /* Center the text */
     color: #333; /* Set text color for better readability */
@@ -638,7 +638,8 @@ a.ib-mob, a.ib-mob:hover {
 }
 @media screen and (max-width: 768px) {
  body{
-  display: contents;
+  display: inline;
+  overflow: auto;
  }
   header{
     display: flex;
@@ -649,15 +650,23 @@ a.ib-mob, a.ib-mob:hover {
   }
   nav a{
     font-size: 12px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .modal-body #phone {
+    width: 420px;
   }
   .dropdown{
+     display: flex;
+    padding: 8px;
+    bottom: 9px;
+  }
+  .dropdown-menu{
     display: flex;
-    padding-top: 2px;
-  
-
- }
+    position: fixed;
+   width: 19rem;
+  }
   .modal-body,
   .modal-header,
   .modal-bodyp,
@@ -667,9 +676,7 @@ a.ib-mob, a.ib-mob:hover {
     right: 0;
     width: 100%;
   }
-  .modal-body #phone {
-    width: 420px;
-  }
+
   .slide__text {
     width: 100%;
     bottom: 0;

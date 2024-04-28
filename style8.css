@@ -316,17 +316,21 @@ body {
     }
     nav a{
       font-size: 12px;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
-    .dropdown{
-      display: flex;
-      padding-top: 3px;
-    
-  
-   }
     .modal-body #phone {
       width: 420px;
+    }
+    .dropdown{
+       display: flex;
+      padding: 3px;
+   
+    }
+    .dropdown-menu{
+      display: flex;
+      position: fixed;
+     width: 14rem;
     }
   
   }
