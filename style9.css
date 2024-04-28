@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
-  box-sizing: border-box;
+  
   margin: 0;
   padding: 0;
 }
@@ -10,6 +10,7 @@ html, body {
   font-size: 62.5%;
   height: 100%;
   overflow-x: hidden;
+
 }
 
 header {
@@ -637,22 +638,29 @@ a.ib-mob, a.ib-mob:hover {
   text-decoration: none;
 }
 @media screen and (max-width: 768px) {
+  html {
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
  body{
   display: inline;
-  overflow: auto;
+  margin: auto;
+ 
  }
   header{
     display: flex;
+    width: 100%; /* Full width */
   }
   nav{
 
     display: flex;
+    width: 100%; /* Full width */
   }
   nav a{
     font-size: 12px;
     margin-left: 10px;
     font-weight: 600;
     margin-right: 10px;
+    width: 100%; /* Full width */
   }
   .modal-body #phone {
     width: 420px;
@@ -661,6 +669,9 @@ a.ib-mob, a.ib-mob:hover {
      display: flex;
     padding: 8px;
     bottom: 9px;
+    
+      flex-direction: column; /* Stacks dropdown items vertically */
+  
   }
   .dropdown-menu{
     display: flex;
