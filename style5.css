@@ -191,12 +191,13 @@ a.ib-mob, a.ib-mob:hover {
     display: flex;
   }
   nav a{
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
     margin-left: 10px;
     margin-right: 10px;
   }
   .modal-body #phone {
-    width: 420px;
+    width: 467px;
   }
   .dropdown{
      display: flex;
