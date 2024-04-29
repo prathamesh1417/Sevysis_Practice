@@ -369,25 +369,109 @@ function appendDefaultResponseButtons(chatBox) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.indicator-value');
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        let c = +counter.innerText;
-  
-        const increment = target / 20000; 
-  
-        if(c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout(updateCounter, 50); 
-        } else {
-            counter.innerText = '0'; 
-            setTimeout(updateCounter, 50); 
-        }
-      };
-      updateCounter();
-    });
-  });
+  const counterDisplayElem = document.querySelector('.indicator-value');
+  const targetValue = +counterDisplayElem.getAttribute('data-target');
+  let count = 0;
+
+  const updateDisplay = () => {
+      if (count < targetValue) {
+          counterDisplayElem.innerText = `${Math.ceil(count)}`;
+      } else {
+          counterDisplayElem.innerText = `${targetValue}+`;
+      }
+  };
+
+  const increment = targetValue / 800;
+
+  const updateCounter = () => {
+      if (count < targetValue) {
+          count += increment;
+          updateDisplay();
+          setTimeout(updateCounter, 50);
+      }
+  };
+
+  updateCounter();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counterDisplayElem = document.querySelector('.indicator-value2');
+  const targetValue = +counterDisplayElem.getAttribute('data-target');
+  let count = 0;
+
+  const updateDisplay = () => {
+      if (count < targetValue) {
+          counterDisplayElem.innerText = `${Math.ceil(count)}`;
+      } else {
+          counterDisplayElem.innerText = `${targetValue}+`;
+      }
+  };
+
+  const increment = targetValue / 15;
+
+  const updateCounter = () => {
+      if (count < targetValue) {
+          count += increment;
+          updateDisplay();
+          setTimeout(updateCounter, 50);
+      }
+  };
+
+  updateCounter();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counterDisplayElem = document.querySelector('.indicator-value1');
+  const targetValue = +counterDisplayElem.getAttribute('data-target');
+  let count = 0;
+
+  const updateDisplay = () => {
+      if (count < targetValue) {
+          counterDisplayElem.innerText = `${Math.ceil(count)}`;
+      } else {
+          counterDisplayElem.innerText = `${targetValue}+`;
+      }
+  };
+
+  const increment = targetValue / 20;
+
+  const updateCounter = () => {
+      if (count < targetValue) {
+          count += increment;
+          updateDisplay();
+          setTimeout(updateCounter, 50);
+      }
+  };
+
+  updateCounter();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counterDisplayElem = document.querySelector('.indicator-value3');
+  const targetValue = +counterDisplayElem.getAttribute('data-target');
+  let count = 0;
+
+  const updateDisplay = () => {
+      if (count < targetValue) {
+          counterDisplayElem.innerText = `${Math.ceil(count)}`;
+      } else {
+          counterDisplayElem.innerText = `${targetValue}+`;
+      }
+  };
+
+  const increment = targetValue / 25;
+
+  const updateCounter = () => {
+      if (count < targetValue) {
+          count += increment;
+          updateDisplay();
+          setTimeout(updateCounter, 50);
+      }
+  };
+
+  updateCounter();
+});
   
   document.addEventListener("DOMContentLoaded", function() {
     

@@ -775,6 +775,18 @@ content: url("/Icon.png");
   font-size: 2em;
   font-weight: bold;
 }
+.indicator-value2 {
+  display: block;
+  counter-reset: count;
+  font-size: 2em;
+  font-weight: bold;
+}
+.indicator-value3 {
+  display: block;
+  counter-reset: count;
+  font-size: 2em;
+  font-weight: bold;
+}
 
 .indicator-label1 {
   display: block;
