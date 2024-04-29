@@ -850,7 +850,8 @@ a.ib-mob, a.ib-mob:hover {
   .dropdown-menu{
     display: flex;
     position: fixed;
-   width: 14rem;
+   width: 13rem;
+   height: 9rem;
   }
 
 
