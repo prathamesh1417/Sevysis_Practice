@@ -32,7 +32,10 @@ body {
   opacity: 0; /* Start with h4 text hidden */
   -webkit-animation: fadeIn 1.5s ease-in forwards;
   animation: fadeIn 1.5s ease-in forwards; /* Apply the animation */
+  
 }
+
+
 
 header {
   position: fixed; /* Changed from relative to fixed */
@@ -906,6 +909,10 @@ a.ib-mob, a.ib-mob:hover {
   background-color: #fff;
   transition: height 0.3s ease;
 }
+.carousal h4{
+  bottom:10px !important;
+}
+
 }
 @media(max-width:767px){
   .about h1, .vision h1, .feed1 h1{
@@ -915,6 +922,9 @@ a.ib-mob, a.ib-mob:hover {
     font-size:16px;
     line-height:normal;
   }
+  .carousal h4{
+    bottom:110px !important;
+  }
   .ib-address{
     align-items: center;
     display: flex;
@@ -922,6 +932,8 @@ a.ib-mob, a.ib-mob:hover {
   }
   
 }
+
+
 
 /* Keyframe animations */
 @-webkit-keyframes slideInDown {
