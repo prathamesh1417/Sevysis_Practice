@@ -806,6 +806,30 @@ a.ib-mob, a.ib-mob:hover {
     padding: 3px;
  
   }
+  .feed .header .image {
+    height: 4.2rem;
+    width: 5.3rem;
+    border-radius: 9999px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
+  }
+  .feed .header .image1 {
+    height: 4rem;
+    width: 6rem;
+    border-radius: 9999px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
+  }
+  .feed .header .image2 {
+    height: 4rem;
+    width: 4.3rem;
+    border-radius: 9999px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/4140/4140037.png);
+  }
   .dropdown-menu{
     display: flex;
     position: fixed;
