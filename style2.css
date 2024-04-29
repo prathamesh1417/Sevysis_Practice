@@ -792,6 +792,23 @@ a.ib-mob, a.ib-mob:hover {
 
     display: flex;
   }
+  #chatbot-toggle-btn {
+    position: fixed;
+    height: 50px;
+    bottom: 40px;
+    right: 20px;
+    padding: 12px 10px;
+    border: none;
+    background-color: #1087ff;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1001;
+  }
   nav a{
     font-size: 13px;
     font-weight: 600;
