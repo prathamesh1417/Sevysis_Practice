@@ -463,12 +463,13 @@ svg {
 
 .slider-container {
   position: relative;
-  height: 100%;
+  height: 100vh;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   cursor: all-scroll;
+  overflow: hidden; /* Hide overflow */
 }
 
 .slider-control {
@@ -883,8 +884,8 @@ a.ib-mob, a.ib-mob:hover {
   text-decoration: none;
 }
 @media screen and (max-width: 768px) {
-  html {
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+  footer {
+    overflow-block: auto; /* Prevent horizontal scrollbar */
 }
  body{
   display: inline;
