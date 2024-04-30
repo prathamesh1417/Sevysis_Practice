@@ -1,7 +1,6 @@
 @import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
-  
   margin: 0;
   padding: 0;
 }
@@ -201,6 +200,7 @@ header {
   .chat-header {
     background-color: #1087ff;
     color: #fff;
+    font-size: 20px;
     padding: 15px 20px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -246,7 +246,7 @@ header {
     width: calc(115% - 20px);
     box-sizing: border-box;
     cursor: pointer;
-    font-size: 0.8em;
+    font-size: 1.2em;
     text-align: center;
   }
   
@@ -258,12 +258,14 @@ header {
   .message-container {
     flex-grow: 1;
     overflow-y: auto;
+    font-size: 15px;
     height: 100%;
   }
   .chat-input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -470,18 +472,20 @@ svg {
           user-select: none;
   cursor: all-scroll;
   overflow: hidden; /* Hide overflow */
+ 
 }
 
 .slider-control {
   z-index: 2;
   position: absolute;
   top: 0;
-  width: 12%;
+  width: 10%;
   height: 100%;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   will-change: opacity;
   opacity: 0;
+
 }
 
 .test{
@@ -884,12 +888,10 @@ a.ib-mob, a.ib-mob:hover {
   text-decoration: none;
 }
 @media screen and (max-width: 768px) {
-  footer {
-    overflow-block: auto; /* Prevent horizontal scrollbar */
-}
+
  body{
-  display: inline;
-  margin: auto;
+  display: inline-block;
+
  
  }
   header{
@@ -900,6 +902,7 @@ a.ib-mob, a.ib-mob:hover {
 
     display: flex;
     width: 100%; /* Full width */
+    
   }
   nav a{
     font-size: 13px;
@@ -914,14 +917,14 @@ a.ib-mob, a.ib-mob:hover {
      display: flex;
     padding: 8px;
     bottom: 9px;
-    
       flex-direction: column; /* Stacks dropdown items vertically */
   
   }
   .dropdown-menu{
     display: flex;
     position: fixed;
-   width: 19rem;
+   width: 18.5rem;
+   height: 14rem;
   }
   .modal-body,
   .modal-header,
@@ -957,6 +960,9 @@ a.ib-mob, a.ib-mob:hover {
 }
   .slide__text-link {
     font-size: 1.8rem;
+  }
+  .slider-container{
+    height: 100rem;
   }
   .span-right {
     font-size: 1.5rem;
