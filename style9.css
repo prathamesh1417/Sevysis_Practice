@@ -364,7 +364,7 @@ header {
     flex-direction: column;
   }
   .bot-message::before {
-  content: url("/Icon.png");
+  content: url("Icon.png");
     position: absolute;
     bottom: 6px;
     right: -19px;
